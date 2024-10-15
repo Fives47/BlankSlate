@@ -25,6 +25,19 @@
           "AddWarps":[
             "118 89 Charlie.Underpressure_LobbyRoom 14 25"
           ]
-       }
+       },
+       {
+       "Action": "EditMap",
+            "Target": "Maps/Charlie.Underpressure_LobbyRoom",
+            "MapTiles": [
+                {
+                    "Position": { "X": 5, "Y": 7 },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "Mine"
+                    }
+            }
+         ]
+      }
     ]
  }

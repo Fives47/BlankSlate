@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="35" height="35" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="35" height="35" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="3">
  <properties>
   <property name="AmbientLight" value="0 0 0"/>
   <property name="Light" value="20 19 1"/>
@@ -314,5 +314,11 @@
  </layer>
  <objectgroup id="4" name="Back"/>
  <objectgroup id="5" name="Buildings"/>
- <objectgroup id="6" name="Front"/>
+ <objectgroup id="6" name="Front">
+  <object id="2" name="Mines" x="80" y="112" width="16" height="16">
+   <properties>
+    <property name="Action" value="Mine"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

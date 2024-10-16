@@ -6,38 +6,100 @@
          "FromMapFile": "assets/Lobby.tmx"
       }
    ],
-    "Changes": [
-       {
-          "Action": "Load",
-          "Target": "Maps/Forest",
-          "FromFile": "assets/Forest.tmx"
-       },
-       {
-         "Action": "EditMap",
-          "Target": "Maps/Charlie.Underpressure_LobbyRoom",
-          "AddWarps":[
-            "14 27 Forest 119 93"
-          ]
-       },
-       {
-         "Action": "EditMap",
-          "Target": "Maps/Forest",
-          "AddWarps":[
-            "118 89 Charlie.Underpressure_LobbyRoom 14 25"
-          ]
-       },
-       {
-       "Action": "EditMap",
-            "Target": "Maps/Charlie.Underpressure_LobbyRoom",
-            "MapTiles": [
-                {
-                    "Position": { "X": 5, "Y": 7 },
-                    "Layer": "Buildings",
-                    "SetProperties": {
-                        "Action": "Mine"
-                    }
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/Forest.tmx"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_LobbyRoom",
+      "AddWarps": [
+        "14 27 Forest 119 93"
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "AddWarps": [
+        "118 89 Charlie.Underpressure_LobbyRoom 14 25"
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_LobbyRoom",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 5,
+            "Y": 7
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Mine"
+          }
+        }
+      ]
+    },
+    //npc stuff
+    //this is a test npc more or less copied from the wiki, its mostly here to act as a template
+    {
+      "Action": "Load",
+      "Target": "Characters/{{ModId}}_Dobson",
+      "FromFile": "assets/dobsprites.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/{{ModId}}_Dobson",
+      "FromFile": "assets/dobsprites.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Dialogue/{{ModId}}_Dobson",
+      "FromFile": "assets/dobdialogue.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/schedules/{{ModId}}_Dobson",
+      "FromFile": "assets/dobschedule.json"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "{{ModId}}_Dobson": {
+          "DisplayName": "Dobson",
+          "BirthSeason": "Summer",
+          "BirthDay": 7,
+          "HomeRegion": "Town",
+          "Gender": "Male",
+          "Age": "Adult",
+          "Manner": "Rude",
+          "SocialAnxiety": "Neutral",
+          "Optimism": "Positive",
+
+          "CanBeRomanced": false,
+
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "BusStop",
+              "Tile": {
+                "X": 19,
+                "Y": 4
+              }
             }
-         ]
+          ]
+        }
       }
-    ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "{{ModId}}_Dobson": "You're giving this to me? This is amazing!/207 232 233 400/Thank you! This is a very interesting specimen./-5 -79 422/...What is this?/80 330/This is disgusting./2/That was very thoughtful of you./-4/ "
+      }
+    }
+  ]
  }

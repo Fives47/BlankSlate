@@ -1,20 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\",
+  "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\content.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MapChange\\content.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\Assets\\dobdialogue.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\Assets\\dobdialogue.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MapChange\\Assets\\dobdialogue.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\Assets\\dobschedule.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\Assets\\dobschedule.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MapChange\\Assets\\dobschedule.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -25,54 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dobschedule.json",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\Assets\\dobschedule.json",
+              "RelativeDocumentMoniker": "MapChange\\Assets\\dobschedule.json",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\Assets\\dobschedule.json",
+              "RelativeToolTip": "MapChange\\Assets\\dobschedule.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-16T19:39:12.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dobdialogue.json",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\Assets\\dobdialogue.json",
+              "RelativeDocumentMoniker": "MapChange\\Assets\\dobdialogue.json",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\Assets\\dobdialogue.json",
+              "RelativeToolTip": "MapChange\\Assets\\dobdialogue.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-16T19:32:19.338Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "content.json",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-17T00:24:04.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dobschedule.json",
-              "DocumentMoniker": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\Assets\\dobschedule.json",
-              "RelativeDocumentMoniker": "MapChange\\Assets\\dobschedule.json",
-              "ToolTip": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\Assets\\dobschedule.json",
-              "RelativeToolTip": "MapChange\\Assets\\dobschedule.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-16T19:39:12.138Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dobdialogue.json",
-              "DocumentMoniker": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\Assets\\dobdialogue.json",
-              "RelativeDocumentMoniker": "MapChange\\Assets\\dobdialogue.json",
-              "ToolTip": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\Assets\\dobdialogue.json",
-              "RelativeToolTip": "MapChange\\Assets\\dobdialogue.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-16T19:32:19.338Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "content.json",
-              "DocumentMoniker": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\content.json",
               "RelativeDocumentMoniker": "MapChange\\content.json",
-              "ToolTip": "C:\\Users\\chbga\\source\\repos\\BlankSlate\\UnderPressure\\MapChange\\content.json",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stardew Valley\\Mods\\UnderPressure\\MapChange\\content.json",
               "RelativeToolTip": "MapChange\\content.json",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-16T19:06:06.57Z",
               "EditorCaption": ""

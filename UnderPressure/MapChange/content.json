@@ -84,10 +84,10 @@
           "Home": [
             {
               "Id": "Default",
-              "Location": "Charlie.Underpressure_LobbyRoom",
+              "Location": "BusStop",
               "Tile": {
-                "X": 8,
-                "Y": 6
+                "X": 19,
+                "Y": 4
               }
             }
           ]
@@ -99,6 +99,23 @@
       "Target": "Data/NPCGiftTastes",
       "Entries": {
         "{{ModId}}_Dobson": "You're giving this to me? This is amazing!/207 232 233 400/Thank you! This is a very interesting specimen./-5 -79 422/...What is this?/80 330/This is disgusting./2/That was very thoughtful of you./-4/ "
+      }
+    }
+    //the item!
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_NatureShard": {
+          "Name": "{{ModId}}_NatureShard",
+          "Displayname": "Nature Shard",
+          "Description": "A piece of an earth creature, imbued with life energy.",
+          "Type": "Crafting",
+          "Category": "-8",
+          "Price": 500
+
+            //no texture as of yet, it'll use the default
+        }
       }
     }
   ]

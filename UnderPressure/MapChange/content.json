@@ -119,7 +119,7 @@
           ]
         }
       }
-    }
+    },
     //the item!
     {
       "Action": "EditData",
@@ -128,12 +128,12 @@
         "{{ModId}}_NatureShard": {
           "Name": "{{ModId}}_NatureShard",
           "Displayname": "Nature Shard",
-          "Description": "A piece of an earth creature, imbued with life energy.",
+          "Description": "A piece of an earth Junimo, imbued with life energy.",
           "Type": "Crafting",
           "Category": "-8",
-          "Price": 500
+          "Price": 5000
 
-            //no texture as of yet, it'll use the default
+          //no texture as of yet, it'll use the default grass one for now
         }
       }
     }

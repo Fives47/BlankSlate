@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\UnderPressure",
+    "\\UnderPressure\\MapChange"
   ],
-  "SelectedNode": "\\C:\\Users\\zacha\\Source\\Repos\\BlankSlate",
+  "SelectedNode": "\\UnderPressure\\MapChange\\content.json",
   "PreviewInSolutionExplorer": false
 }

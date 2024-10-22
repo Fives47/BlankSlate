@@ -42,12 +42,10 @@
         }
       ]
     },
-    //NPCs
-    //this is a test npc more or less copied from the wiki, its mostly here to act as a template
     {
       "Action": "Load",
       "Target": "Characters/{{ModId}}_Dobson",
-      "FromFile": "assets/dobsprites.png"
+      "FromFile": "assets/Miner.png"
     },
     {
       "Action": "Load",
@@ -84,10 +82,10 @@
           "Home": [
             {
               "Id": "Default",
-              "Location": "BusStop",
+              "Location": "Charlie.Underpressure_LobbyRoom",
               "Tile": {
-                "X": 19,
-                "Y": 4
+                "X": 8,
+                "Y": 6
               }
             }
           ]
@@ -101,7 +99,6 @@
         "{{ModId}}_Dobson": "You're giving this to me? This is amazing!/207 232 233 400/Thank you! This is a very interesting specimen./-5 -79 422/...What is this?/80 330/This is disgusting./2/That was very thoughtful of you./-4/ "
       }
     },
-    //Quests, Triggers, Events
     {
       "Action": "Load",
       "Target": "Data/Quests",

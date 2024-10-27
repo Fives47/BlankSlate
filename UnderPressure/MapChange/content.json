@@ -37,7 +37,7 @@
           },
           "Layer": "Buildings",
           "SetProperties": {
-            "Action": "Mine"
+            "Action": "spacechase0.SpaceCore_DungeonEntrance {{ModID}}_TestDungeon"
           }
         }
       ]
@@ -117,7 +117,6 @@
         }
       }
     },
-    //the item!
     {
       "Action": "EditData",
       "Target": "Data/Objects",
@@ -129,10 +128,38 @@
           "Type": "Crafting",
           "Category": "-8",
           "Price": 5000
-
-          //no texture as of yet, it'll use the default grass one for now
         }
       }
-    }
+    },
+    {
+      "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/Dungeons",
+      "Entries": {
+          "{{ModID}}_TestDungeon": {
+              "Regions": {
+                  "Main": {
+                      "LevelRange": { "Begin": 1, "End": 50 },
+                      "MapPool": [ // Normally you'd have multiple in this list but for testing, I'm lazy
+                          {
+                              "Weight": 1.0,
+                              "Value": "Maps/FarmCave", // Normally you'd use your own maps, but I'm lazy. These need to be loaded into the Maps/ folder like normal maps.
+                          }
+                      ],
+                      "TriggerActionsOnEntry": [
+                          "{{ModID}}_DungeonSpawns", // You can put whatever here. If you're using SpaceCore's Spawnables system, make sure to mark it as HostOnly:true and MarkActionApplied:false
+                      ],
+                      "LocationDataEntry": "UndergroundMine", // Use your own placeholder location normally - this is how things like location context and fish get chosen
+                  }
+              },
+              "LadderExitLocation": "Town",
+              "LadderExitTile": "28, 67",
+              "ElevatorExitLocation": "Town",
+              "ElevatorExitTile": "30, 69",
+              "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
+              "SpawnsLadders": true,
+              "SpawnsMineshafts": true,
+          }
+      }
+    },
   ]
  }

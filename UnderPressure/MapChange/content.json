@@ -119,18 +119,23 @@
     },
     //the item!
     {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthShard",
+      "FromFile": "assets/Earth_Shard.png"
+    },
+    {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
-        "{{ModId}}_NatureShard": {
-          "Name": "{{ModId}}_NatureShard",
-          "Displayname": "Nature Shard",
+        "{{ModId}}_EarthShard": {
+          "Name": "{{ModId}}_EarthShard",
+          "Displayname": "Earth Shard",
           "Description": "A piece of an earth Junimo, imbued with life energy.",
           "Type": "Crafting",
           "Category": "-8",
-          "Price": 5000
+          "Price": 5000,
 
-          //no texture as of yet, it'll use the default grass one for now
+          "Texture": "Objects/{{ModId}}_EarthShard"
         }
       }
     }

@@ -4,7 +4,12 @@
       {
          "Name": "Charlie.Underpressure_LobbyRoom",
          "FromMapFile": "assets/Lobby.tmx"
-      }
+      },
+      {
+        "Name": "Charlie.Underpressure_DungeonFloor",
+        "FromMapFile": "assets/dungeonfloorone.tmx"
+     }
+
    ],
   "Changes": [
     {
@@ -114,6 +119,15 @@
           "Actions": [
             "AddQuest 201"
           ]
+        },
+        "Charlie.Underpressure_CaveSpawns":{
+            "Id":"Charlie.Underpressure_EnemySpawns",
+            "Trigger":"Manual",
+            "HostOnly":"True",
+            "MarkActionApplied":"False",
+            "Actions":[
+              "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
+            ]
         }
       }
     },
@@ -133,20 +147,65 @@
     },
     {
       "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/SpawnableDefinitions",
+      "Entries": {
+        "Charlie.Underpressure_SpawnDino": {
+          "Type": "Monster",
+          "MonsterType": "Bat",
+          "MonsterName": "Bat",
+          "MonsterTextureOverride": null,
+          "MonsterDropOverride": [
+              [
+                  {
+                      "Weight": 1.0,
+                      "Value": {
+                          "ItemId": "(O)74",
+                          "MinStack": 10,
+                          "MaxStack": 25
+                      }
+                  }
+              ]
+          ],
+          "MonsterAdditionalData": {}
+      }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/SpawningGroups",
+      "Entries": {
+          "Charlie.Underpressure_CaveSpawns": {
+              "SpawnablesToSpawn": [
+                  {
+                      "SpawnableIds": [
+                          {
+                              "Weight": 1.0,
+                              "Value": "Charlie.Underpressure_SpawnDino"
+                          }
+                      ],
+                      "Minimum": 1,
+                      "Maximum": 1
+                  }
+              ]
+            }
+    }
+  },
+  {
+      "Action": "EditData",
       "Target": "spacechase0.SpaceCore/Dungeons",
       "Entries": {
           "{{ModID}}_TestDungeon": {
               "Regions": {
                   "Main": {
                       "LevelRange": { "Begin": 1, "End": 50 },
-                      "MapPool": [ // Normally you'd have multiple in this list but for testing, I'm lazy
+                      "MapPool": [
                           {
                               "Weight": 1.0,
-                              "Value": "Maps/FarmCave", // Normally you'd use your own maps, but I'm lazy. These need to be loaded into the Maps/ folder like normal maps.
+                              "Value": "Maps/Charlie.Underpressure_DungeonFloor"
                           }
                       ],
                       "TriggerActionsOnEntry": [
-                          "{{ModID}}_DungeonSpawns", // You can put whatever here. If you're using SpaceCore's Spawnables system, make sure to mark it as HostOnly:true and MarkActionApplied:false
+                          "Charlie.Underpressure_EnemySpawns"
                       ],
                       "LocationDataEntry": "UndergroundMine", // Use your own placeholder location normally - this is how things like location context and fish get chosen
                   }
@@ -157,9 +216,9 @@
               "ElevatorExitTile": "30, 69",
               "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
               "SpawnsLadders": true,
-              "SpawnsMineshafts": true,
+              "SpawnsMineshafts": true
           }
       }
-    },
+    }
   ]
  }

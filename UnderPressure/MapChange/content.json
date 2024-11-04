@@ -1,11 +1,11 @@
 {
-    "Format": "2.3.0",
-    "CustomLocations": [      
-      {
-         "Name": "Charlie.Underpressure_LobbyRoom",
-         "FromMapFile": "assets/Lobby.tmx"
-      }
-   ],
+  "Format": "2.3.0",
+  "CustomLocations": [
+    {
+      "Name": "Charlie.Underpressure_LobbyRoom",
+      "FromMapFile": "assets/Lobby.tmx"
+    }
+  ],
   "Changes": [
     {
       "Action": "Load",
@@ -131,13 +131,95 @@
           "Name": "{{ModId}}_EarthShard",
           "Displayname": "Earth Shard",
           "Description": "A piece of an earth Junimo, imbued with life energy.",
-          "Type": "Crafting",
-          "Category": "-8",
+          "Type": "Minerals",
+          "Category": -12,
           "Price": 5000,
 
           "Texture": "Objects/{{ModId}}_EarthShard"
         }
       }
+    },
+
+    //the machine and the reward
+    //(we'll have a machine that makes the sprinkler using the shards)
+    //(because we don't know how to use them and extract their power ourselves)
+
+    {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_LifeSprinkler",
+      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+    },
+    {
+      "Action": "Load",
+      "Target": "BigCraftables/{{ModId}}_EarthShardMachine", //name pending
+      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+    },
+    {
+      "Action": "Load",
+      "Target": "Machines/{{ModId}}_EarthShardMachine",
+      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+    },
+
+    //SPRINKLER FUNCTIONALITY (not yet in): 
+    //allows crops in a radius around it to grow regardless of the weather condition, letting them grow in winter
+    //that sounds like it could be as easy as unchecking a flag or smth
+    //i'll look into how the sprinkler works and try and reverse engineer that when i get around to it
+    //making it upgradeable could be a stretch goal
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_LifeSprinkler": {
+          "Name": "{{ModId}}_LifeSprinkler",
+          "DisplayName": "Life Sprinkler",
+          "Description": "A sprinkler surging with life energy, allowing crops in its radius to grow in all weather.",
+          "Type": "Crafting",
+          "Category": -8
+        }
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/BigCraftables",
+      "Entries": {
+        "{{ModId}}_EarthShardMachine": {
+          "Name": "{{ModId}}_EarthShardMachine",
+          "Displayname": "Earth Shard Machine",
+          "Description": "A machine capable of utilizing the life energy in earth shards.",
+          "IsLamp": "True"
+        }
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "Entries": {
+        "(BC){{ModId}}_EarthShardMachine": {
+          "OutputRules": [
+            {
+              "Id": "{{ModId}}_MakeLifeSprinkler",
+              "Triggers": [
+                {
+                  "Trigger": "ItemPlacedInMachine",
+                  "RequiredItemId": "{{ModId}}_EarthShard",
+                  "RequiredCount": 300
+                }
+              ],
+              "LightWhileWorking": {
+                "Radius": "1",
+                "Color": "Green"
+              },
+              "OutputItem": [
+                {
+                  "ItemId": "{{ModId}}_LifeSprinkler"
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ]
- }
+}

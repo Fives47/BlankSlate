@@ -131,8 +131,8 @@
           "Name": "{{ModId}}_EarthShard",
           "Displayname": "Earth Shard",
           "Description": "A piece of an earth Junimo, imbued with life energy.",
-          "Type": "Minerals",
-          "Category": -12,
+          "Type": "Basic",
+          "Category": -28,
           "Price": 5000,
 
           "Texture": "Objects/{{ModId}}_EarthShard"

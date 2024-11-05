@@ -299,15 +299,31 @@
                       "LocationDataEntry": "UndergroundMine"
                   }
               },
-              "LadderExitLocation": "Town",
-              "LadderExitTile": "28, 67",
-              "ElevatorExitLocation": "Town",
-              "ElevatorExitTile": "30, 69",
+              "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
+              "LadderExitTile": "5, 8",
+              "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
+              "ElevatorExitTile": "5, 8",
               "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
               "SpawnsLadders": true,
               "SpawnsMineshafts": true
           }
       }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_DungeonFloor",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 4,
+            "Y": 16
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "spacechase0.SpaceCore_DungeonLadderExit"
+          }
+        }
+      ]
     }
   ]
 }

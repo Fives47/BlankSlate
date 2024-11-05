@@ -54,7 +54,7 @@
     {
       "Action": "Load",
       "Target": "Portraits/{{ModId}}_Dobson",
-      "FromFile": "assets/dobsprites.png"
+      "FromFile": "assets/Miner_Portrait.png"
     },
     {
       "Action": "Load",
@@ -256,8 +256,25 @@
               ]
           ],
           "MonsterAdditionalData": {}
+      },
+        "SpawnRock": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "74",
+          "MinableDrops": [
+              [
+                  {
+                      "Weight": 1.0,
+                      "Value": {
+                          "ItemId": "(O)74"
+                      }
+                  }
+              ]
+          ],
+          "MinableExperienceGranted": 100
       }
-      }
+    }
     },
     {
       "Action": "EditData",
@@ -273,8 +290,18 @@
                           }
                       ],
                       "Minimum": 1,
-                      "Maximum": 1
-                  }
+                      "Maximum": 10
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnRock"
+                        }
+                    ],
+                    "Minimum": 10,
+                    "Maximum": 10
+                }
               ]
             }
     }
@@ -299,13 +326,14 @@
                       "LocationDataEntry": "UndergroundMine"
                   }
               },
+              "SpawnsLadders": true,
+              "SpawnsMineshafts": false,
               "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
               "LadderExitTile": "5, 8",
               "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
               "ElevatorExitTile": "5, 8",
-              "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
-              "SpawnsLadders": true,
-              "SpawnsMineshafts": true
+              "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ]
+              
           }
       }
     },

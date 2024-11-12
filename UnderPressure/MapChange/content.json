@@ -8,6 +8,10 @@
     {
       "Name": "Charlie.Underpressure_DungeonFloor",
       "FromMapFile": "assets/dungeonfloorone.tmx"
+   },
+   {
+      "Name": "Charlie.Underpressure_DungeonFloorTwo",
+      "FromMapFile": "assets/dungeonfloortwo.tmx"
    }
   ],
   "Changes": [
@@ -137,6 +141,11 @@
       "FromFile": "assets/Earth_Shard.png"
     },
     {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthRock",
+      "FromFile": "assets/Earth_Shard_Rock.png"
+    },
+    {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
@@ -149,6 +158,22 @@
           "Price": 5000,
 
           "Texture": "Objects/{{ModId}}_EarthShard"
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_EarthShardRock": {
+          "Name": "{{ModId}}_EarthShardRock",
+          "Displayname": "Earth Shard Rock",
+          "Description": "Small glowing shards cover the rock.",
+          "Type": "Rock",
+          "Category": -28,
+          "Price": 5000,
+
+          "Texture": "Objects/{{ModId}}_EarthRock"
         }
       }
     },
@@ -257,22 +282,39 @@
           ],
           "MonsterAdditionalData": {}
       },
-        "SpawnRock": {
+      "SpawnRock": {
           "Type": "Minable",
           "Condition": "TRUE",
           "MinableTool": "Pickaxe",
-          "MinableObjectId": "74",
+          "MinableObjectId": "38",
+          "MinableDrops": [
+                 [
+                   {
+                      "Weight": 1.0,
+                         "Value": {
+                          "ItemId": "(O)38"
+                      }
+                    }
+               ]
+            ],
+        "MinableExperienceGranted": 100
+      },
+      "SpawnEarthRock": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "{{ModId}}_EarthShardRock",
           "MinableDrops": [
               [
                   {
                       "Weight": 1.0,
                       "Value": {
-                          "ItemId": "(O)74"
+                          "ItemId": "(O){{ModId}}_EarthShard"
                       }
                   }
               ]
           ],
-          "MinableExperienceGranted": 100
+          "MinableExperienceGranted": 15
       }
     }
     },
@@ -286,11 +328,11 @@
                       "SpawnableIds": [
                           {
                               "Weight": 1.0,
-                              "Value": "Charlie.Underpressure_SpawnDino"
+                              "Value": "{{ModId}}_SpawnDino"
                           }
                       ],
                       "Minimum": 1,
-                      "Maximum": 10
+                      "Maximum": 2
                   },
                   {
                     "SpawnableIds": [
@@ -299,9 +341,19 @@
                           "Value": "SpawnRock"
                         }
                     ],
-                    "Minimum": 10,
+                    "Minimum": 5,
                     "Maximum": 10
-                }
+                },
+                {
+                  "SpawnableIds": [
+                      {
+                        "Weight": 1.0,
+                        "Value": "SpawnEarthRock"
+                      }
+                  ],
+                  "Minimum": 5,
+                  "Maximum": 10
+              }
               ]
             }
     }
@@ -318,6 +370,10 @@
                           {
                               "Weight": 1.0,
                               "Value": "Maps/Charlie.Underpressure_DungeonFloor"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorTwo"
                           }
                       ],
                       "TriggerActionsOnEntry": [
@@ -326,7 +382,7 @@
                       "LocationDataEntry": "UndergroundMine"
                   }
               },
-              "SpawnsLadders": true,
+              "SpawnLadders": false,
               "SpawnsMineshafts": false,
               "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
               "LadderExitTile": "5, 8",
@@ -345,6 +401,22 @@
           "Position": {
             "X": 4,
             "Y": 16
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "spacechase0.SpaceCore_DungeonLadderExit"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_DungeonFloorTwo",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 3
           },
           "Layer": "Buildings",
           "SetProperties": {

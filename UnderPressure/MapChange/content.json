@@ -302,44 +302,84 @@
                       "Weight": 1.0,
                       "Value": {
                           "ItemId": "(O)74",
-                          "MinStack": 10,
-                          "MaxStack": 25
+                          "MinStack": 5,
+                          "MaxStack": 10
                       }
                   }
               ]
           ],
           "MonsterAdditionalData": {}
       },
-      "Charlie.Underpressure_SpawnRockCrab": {
-        "Type": "Monster",
-        "MonsterType": "RockCrab",
-        "MonsterName": "RockCrab",
-        "MonsterTextureOverride": null,   // will one day be filled with something else
-        "MonsterDropOverride": [
-          [
-            {
-              "Weight": 1.0,
-              "Value": {
-                "ItemId": "32",
-                "MinStack": 5,
-                "MaxStack": 15
-              }
-            }
-          ]
-        ],
-        "MonsterAdditionalData": {}
-      },
       "SpawnRock": {
           "Type": "Minable",
           "Condition": "TRUE",
           "MinableTool": "Pickaxe",
           "MinableObjectId": "38",
+          "MinableHealth": 100,
           "MinableDrops": [
                  [
                    {
                       "Weight": 1.0,
                          "Value": {
-                          "ItemId": "(O)38"
+                          "ItemId": "(O)390",
+                          "MinStack": 1,
+                          "MaxStack": 3
+                      }
+                    },
+                    {
+                      "Weight": 0.05,
+                         "Value": {
+                          "ItemId": "(O)535"
+                      }
+                    }
+               ]
+            ],
+        "MinableExperienceGranted": 100
+      },
+      "SpawnRock2": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "32",
+          "MinableDrops": [
+                 [
+                   {
+                      "Weight": 1.0,
+                         "Value": {
+                          "ItemId": "(O)390",
+                          "MinStack": 1,
+                          "MaxStack": 3
+                      }
+                    },
+                    {
+                      "Weight": 0.05,
+                         "Value": {
+                          "ItemId": "(O)535"
+                      }
+                    }
+               ]
+            ],
+        "MinableExperienceGranted": 100
+      },
+      "SpawnRock3": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "40",
+          "MinableDrops": [
+                 [
+                   {
+                      "Weight": 1.0,
+                         "Value": {
+                          "ItemId": "(O)390",
+                          "MinStack": 1,
+                          "MaxStack": 3
+                      }
+                    },
+                    {
+                      "Weight": 0.05,
+                         "Value": {
+                          "ItemId": "(O)535"
                       }
                     }
                ]
@@ -383,34 +423,44 @@
                   },
                   {
                     "SpawnableIds": [
-                      {
-                        "Weight": 0.5,
-                        "Value": "{{ModId}}_SpawnRockCrab"
-                      }
-                    ],
-                    "Minimum": 0,
-                    "Maximum": 3
-                  },
-                  {
-                    "SpawnableIds": [
                         {
                           "Weight": 1.0,
                           "Value": "SpawnRock"
                         }
                     ],
+                    "Minimum": 20,
+                    "Maximum": 35
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnRock2"
+                        }
+                    ],
+                    "Minimum": 20,
+                    "Maximum": 35
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnRock3"
+                        }
+                    ],
+                    "Minimum": 20,
+                    "Maximum": 35
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnEarthRock"
+                        }
+                    ],
                     "Minimum": 5,
                     "Maximum": 10
-                },
-                {
-                  "SpawnableIds": [
-                      {
-                        "Weight": 1.0,
-                        "Value": "SpawnEarthRock"
-                      }
-                  ],
-                  "Minimum": 5,
-                  "Maximum": 10
-              }
+                  }
               ]
             }
     }
@@ -431,7 +481,7 @@
                           {
                             "Weight": 1.0,
                             "Value": "Maps/Charlie.Underpressure_DungeonFloorTwo"
-                          }
+                          },
                           {
                             "Weight": 1.0,
                             "Value": "Maps/Charlie.Underpressure_DungeonFloorThree"
@@ -467,7 +517,7 @@
                       "LocationDataEntry": "UndergroundMine"
                   }
               },
-              "SpawnLadders": false,
+              "SpawnLadders": true,
               "SpawnsMineshafts": false,
               "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
               "LadderExitTile": "5, 8",

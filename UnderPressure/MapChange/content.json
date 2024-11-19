@@ -1,16 +1,59 @@
 {
-    "Format": "2.3.0",
-    "CustomLocations": [      
-      {
-         "Name": "Charlie.Underpressure_LobbyRoom",
-         "FromMapFile": "assets/Lobby.tmx"
-      },
-      {
-        "Name": "Charlie.Underpressure_DungeonFloor",
-        "FromMapFile": "assets/dungeonfloorone.tmx"
-     }
-
-   ],
+  "Format": "2.3.0",
+  "CustomLocations": [
+    {
+      "Name": "Charlie.Underpressure_LobbyRoom",
+      "FromMapFile": "assets/Lobby.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloor",
+      "FromMapFile": "assets/dungeonfloorone.tmx"
+   },
+   {
+      "Name": "Charlie.Underpressure_DungeonFloorTwo",
+      "FromMapFile": "assets/dungeonfloortwo.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorThree",
+    "FromMapFile": "assets/dungeonfloorthree.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorFour",
+    "FromMapFile": "assets/dungeonfloorfour.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorFive",
+    "FromMapFile": "assets/dungeonfloorfive.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorSix",
+    "FromMapFile": "assets/dungeonfloorsix.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorSeven",
+    "FromMapFile": "assets/dungeonfloorseven.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorEight",
+    "FromMapFile": "assets/dungeonflooreight.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorNine",
+    "FromMapFile": "assets/dungeonfloornine.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorTen",
+    "FromMapFile": "assets/dungeonfloorten.tmx"
+   },
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorEleven",
+    "FromMapFile": "assets/dungeonflooreleven.tmx"
+   }
+   {
+    "Name": "Charlie.Underpressure_DungeonFloorTwelve",
+    "FromMapFile": "assets/dungeonflooreltwelve.tmx"
+   }
+  ],
   "Changes": [
     {
       "Action": "Load",
@@ -48,22 +91,6 @@
       ]
     },
     {
-      "Action": "EditMap",
-      "Target": "Maps/Charlie.Underpressure_DungeonFloor",
-      "MapTiles": [
-        {
-          "Position": {
-            "X": 4,
-            "Y": 16
-          },
-          "Layer": "Buildings",
-          "SetProperties": {
-            "Action": "spacechase0.SpaceCore_DungeonLadderExit"
-          }
-        }
-      ]
-    },
-    {
       "Action": "Load",
       "Target": "Characters/{{ModId}}_Dobson",
       "FromFile": "assets/Miner.png"
@@ -71,7 +98,7 @@
     {
       "Action": "Load",
       "Target": "Portraits/{{ModId}}_Dobson",
-      "FromFile": "assets/dobsprites.png"
+      "FromFile": "assets/Miner_Portrait.png"
     },
     {
       "Action": "Load",
@@ -147,17 +174,128 @@
         }
       }
     },
+    //the item!
+    {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthShard",
+      "FromFile": "assets/Earth_Shard.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthRock",
+      "FromFile": "assets/Earth_Shard_Rock.png"
+    },
     {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
-        "{{ModId}}_NatureShard": {
-          "Name": "{{ModId}}_NatureShard",
-          "Displayname": "Nature Shard",
+        "{{ModId}}_EarthShard": {
+          "Name": "{{ModId}}_EarthShard",
+          "Displayname": "Earth Shard",
           "Description": "A piece of an earth Junimo, imbued with life energy.",
+          "Type": "Basic",
+          "Category": -28,
+          "Price": 5000,
+
+          "Texture": "Objects/{{ModId}}_EarthShard"
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_EarthShardRock": {
+          "Name": "{{ModId}}_EarthShardRock",
+          "Displayname": "Earth Shard Rock",
+          "Description": "Small glowing shards cover the rock.",
+          "Type": "Rock",
+          "Category": -28,
+          "Price": 5000,
+
+          "Texture": "Objects/{{ModId}}_EarthRock"
+        }
+      }
+    },
+
+    //the machine and the reward
+    //(we'll have a machine that makes the sprinkler using the shards)
+    //(because we don't know how to use them and extract their power ourselves)
+
+    {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_LifeSprinkler",
+      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+    },
+    {
+      "Action": "Load",
+      "Target": "BigCraftables/{{ModId}}_EarthShardMachine", //name pending
+      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+    },
+    {
+      "Action": "Load",
+      "Target": "Machines/{{ModId}}_EarthShardMachine",
+      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+    },
+
+    //SPRINKLER FUNCTIONALITY (not yet in): 
+    //allows crops in a radius around it to grow regardless of the weather condition, letting them grow in winter
+    //that sounds like it could be as easy as unchecking a flag or smth
+    //i'll look into how the sprinkler works and try and reverse engineer that when i get around to it
+    //making it upgradeable could be a stretch goal
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_LifeSprinkler": {
+          "Name": "{{ModId}}_LifeSprinkler",
+          "DisplayName": "Life Sprinkler",
+          "Description": "A sprinkler surging with life energy, allowing crops in its radius to grow in all weather.",
           "Type": "Crafting",
-          "Category": "-8",
-          "Price": 5000
+          "Category": -8
+        }
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/BigCraftables",
+      "Entries": {
+        "{{ModId}}_EarthShardMachine": {
+          "Name": "{{ModId}}_EarthShardMachine",
+          "Displayname": "Earth Shard Machine",
+          "Description": "A machine capable of utilizing the life energy in earth shards.",
+          "IsLamp": "True"
+        }
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "Entries": {
+        "(BC){{ModId}}_EarthShardMachine": {
+          "OutputRules": [
+            {
+              "Id": "{{ModId}}_MakeLifeSprinkler",
+              "Triggers": [
+                {
+                  "Trigger": "ItemPlacedInMachine",
+                  "RequiredItemId": "{{ModId}}_EarthShard",
+                  "RequiredCount": 300
+                }
+              ],
+              "LightWhileWorking": {
+                "Radius": "1",
+                "Color": "Green"
+              },
+              "OutputItem": [
+                {
+                  "ItemId": "{{ModId}}_LifeSprinkler"
+                }
+              ]
+            }
+          ]
         }
       }
     },
@@ -176,15 +314,108 @@
                       "Weight": 1.0,
                       "Value": {
                           "ItemId": "(O)74",
-                          "MinStack": 10,
-                          "MaxStack": 25
+                          "MinStack": 5,
+                          "MaxStack": 10
                       }
                   }
               ]
           ],
           "MonsterAdditionalData": {}
+      },
+      "SpawnRock": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "38",
+          "MinableHealth": 100,
+          "MinableDrops": [
+                 [
+                   {
+                      "Weight": 1.0,
+                         "Value": {
+                          "ItemId": "(O)390",
+                          "MinStack": 1,
+                          "MaxStack": 3
+                      }
+                    },
+                    {
+                      "Weight": 0.05,
+                         "Value": {
+                          "ItemId": "(O)535"
+                      }
+                    }
+               ]
+            ],
+        "MinableExperienceGranted": 100
+      },
+      "SpawnRock2": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "32",
+          "MinableDrops": [
+                 [
+                   {
+                      "Weight": 1.0,
+                         "Value": {
+                          "ItemId": "(O)390",
+                          "MinStack": 1,
+                          "MaxStack": 3
+                      }
+                    },
+                    {
+                      "Weight": 0.05,
+                         "Value": {
+                          "ItemId": "(O)535"
+                      }
+                    }
+               ]
+            ],
+        "MinableExperienceGranted": 100
+      },
+      "SpawnRock3": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "40",
+          "MinableDrops": [
+                 [
+                   {
+                      "Weight": 1.0,
+                         "Value": {
+                          "ItemId": "(O)390",
+                          "MinStack": 1,
+                          "MaxStack": 3
+                      }
+                    },
+                    {
+                      "Weight": 0.05,
+                         "Value": {
+                          "ItemId": "(O)535"
+                      }
+                    }
+               ]
+            ],
+        "MinableExperienceGranted": 100
+      },
+      "SpawnEarthRock": {
+          "Type": "Minable",
+          "Condition": "TRUE",
+          "MinableTool": "Pickaxe",
+          "MinableObjectId": "{{ModId}}_EarthShardRock",
+          "MinableDrops": [
+              [
+                  {
+                      "Weight": 1.0,
+                      "Value": {
+                          "ItemId": "(O){{ModId}}_EarthShard"
+                      }
+                  }
+              ]
+          ],
+          "MinableExperienceGranted": 15
       }
-      }
+    }
     },
     {
       "Action": "EditData",
@@ -196,11 +427,51 @@
                       "SpawnableIds": [
                           {
                               "Weight": 1.0,
-                              "Value": "Charlie.Underpressure_SpawnDino"
+                              "Value": "{{ModId}}_SpawnDino"
                           }
                       ],
                       "Minimum": 1,
-                      "Maximum": 1
+                      "Maximum": 2
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnRock"
+                        }
+                    ],
+                    "Minimum": 20,
+                    "Maximum": 35
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnRock2"
+                        }
+                    ],
+                    "Minimum": 20,
+                    "Maximum": 35
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnRock3"
+                        }
+                    ],
+                    "Minimum": 20,
+                    "Maximum": 35
+                  },
+                  {
+                    "SpawnableIds": [
+                        {
+                          "Weight": 1.0,
+                          "Value": "SpawnEarthRock"
+                        }
+                    ],
+                    "Minimum": 5,
+                    "Maximum": 10
                   }
               ]
             }
@@ -213,28 +484,105 @@
           "{{ModID}}_TestDungeon": {
               "Regions": {
                   "Main": {
-                      "LevelRange": { "Begin": 1, "End": 50 },
+                      "LevelRange": { "Begin": 1, "End": 30 },
                       "MapPool": [
                           {
                               "Weight": 1.0,
                               "Value": "Maps/Charlie.Underpressure_DungeonFloor"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorTwo"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorThree"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorFour"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorFive"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorSix"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorSeven"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorEight"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorNine"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorTen"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorEleven"
+                          },
+                          {
+                            "Weight": 1.0,
+                            "Value": "Maps/Charlie.Underpressure_DungeonFloorTwelve"
                           }
                       ],
                       "TriggerActionsOnEntry": [
                           "Charlie.Underpressure_EnemySpawns"
                       ],
-                      "LocationDataEntry": "UndergroundMine", // Use your own placeholder location normally - this is how things like location context and fish get chosen
+                      "LocationDataEntry": "UndergroundMine"
                   }
               },
+              "SpawnLadders": true,
+              "SpawnsMineshafts": false,
               "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
               "LadderExitTile": "5, 8",
-              "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom", // Currently there are no elevators so these don't matter
+              "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
               "ElevatorExitTile": "5, 8",
-              "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
-              "SpawnsLadders": true,
-              "SpawnsMineshafts": true
+              "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ]
+              
           }
       }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_DungeonFloor",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 4,
+            "Y": 16
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "spacechase0.SpaceCore_DungeonLadderExit"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_DungeonFloorTwo",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 3
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "spacechase0.SpaceCore_DungeonLadderExit"
+          }
+        }
+      ]
     }
   ]
- }
+}

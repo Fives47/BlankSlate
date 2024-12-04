@@ -8,39 +8,39 @@
     {
       "Name": "Charlie.Underpressure_DungeonFloor",
       "FromMapFile": "assets/dungeonfloorone.tmx"
-   },
-   {
+    },
+    {
       "Name": "Charlie.Underpressure_DungeonFloorTwo",
       "FromMapFile": "assets/dungeonfloortwo.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorThree",
-    "FromMapFile": "assets/dungeonfloorthree.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorFour",
-    "FromMapFile": "assets/dungeonfloorfour.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorFive",
-    "FromMapFile": "assets/dungeonfloorfive.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorSix",
-    "FromMapFile": "assets/dungeonfloorsix.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorSeven",
-    "FromMapFile": "assets/dungeonfloorseven.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorEight",
-    "FromMapFile": "assets/dungeonflooreight.tmx"
-   },
-   {
-    "Name": "Charlie.Underpressure_DungeonFloorNine",
-    "FromMapFile": "assets/dungeonfloornine.tmx"
-   }
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorThree",
+      "FromMapFile": "assets/dungeonfloorthree.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorFour",
+      "FromMapFile": "assets/dungeonfloorfour.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorFive",
+      "FromMapFile": "assets/dungeonfloorfive.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorSix",
+      "FromMapFile": "assets/dungeonfloorsix.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorSeven",
+      "FromMapFile": "assets/dungeonfloorseven.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorEight",
+      "FromMapFile": "assets/dungeonflooreight.tmx"
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorNine",
+      "FromMapFile": "assets/dungeonfloornine.tmx"
+    }
   ],
   "Changes": [
     {
@@ -149,16 +149,25 @@
           "Trigger": "DayStarted",
           "Actions": [
             "AddQuest 201"
-          ]
+          ],
+          //prerequisite implementation
+          //if it's the second year, the first winter has passed
+          //if it's the first year, it'll only be true if it's winter
+          "When": {
+            "Query: '{{Season}}' = 'winter' OR '{{Year}}' > 1": true,
+            "Query: '{{HasActiveQuest}}' = '14'": false
+            //this technically passes if you don't claim the starter mines quest by the first winter...
+            //but surely nobody would do that right? is that even possible?
+          }
         },
-        "Charlie.Underpressure_CaveSpawns":{
-            "Id":"Charlie.Underpressure_EnemySpawns",
-            "Trigger":"Manual",
-            "HostOnly":"True",
-            "MarkActionApplied":"False",
-            "Actions":[
-              "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
-            ]
+        "Charlie.Underpressure_CaveSpawns": {
+          "Id": "Charlie.Underpressure_EnemySpawns",
+          "Trigger": "Manual",
+          "HostOnly": "True",
+          "MarkActionApplied": "False",
+          "Actions": [
+            "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
+          ]
         }
       }
     },
@@ -206,10 +215,30 @@
       }
     },
 
+    //the ring (not the screen)
+    {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthRing",
+      "FromFile": "assets/Earth_Ring.png" //using the earth shard as a placeholder
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_EarthRing": {
+          "Name": "{{ModId}}_EarthRing",
+          "DisplayName": "Earth Ring",
+          "Description": "A ring imbued with earth energy, granting its wearer increased durability.",
+          "Type": "Ring",
+          "Category": -96,
+
+          "Texture": "Objects/{{ModId}}_EarthRing"
+        }
+      }
+    },
     //the machine and the reward
     //(we'll have a machine that makes the sprinkler using the shards)
     //(because we don't know how to use them and extract their power ourselves)
-
     {
       "Action": "Load",
       "Target": "Objects/{{ModId}}_LifeSprinkler",
@@ -297,235 +326,238 @@
           "MonsterName": "Bat",
           "MonsterTextureOverride": null,
           "MonsterDropOverride": [
-              [
-                  {
-                      "Weight": 1.0,
-                      "Value": {
-                          "ItemId": "(O)74",
-                          "MinStack": 5,
-                          "MaxStack": 10
-                      }
-                  }
-              ]
+            [
+              {
+                "Weight": 1.0,
+                "Value": {
+                  "ItemId": "(O)74",
+                  "MinStack": 5,
+                  "MaxStack": 10
+                }
+              }
+            ]
           ],
           "MonsterAdditionalData": {}
-      },
-      "SpawnRock": {
+        },
+        "SpawnRock": {
           "Type": "Minable",
           "Condition": "TRUE",
           "MinableTool": "Pickaxe",
           "MinableObjectId": "38",
           "MinableHealth": 100,
           "MinableDrops": [
-                 [
-                   {
-                      "Weight": 1.0,
-                         "Value": {
-                          "ItemId": "(O)390",
-                          "MinStack": 1,
-                          "MaxStack": 3
-                      }
-                    },
-                    {
-                      "Weight": 0.05,
-                         "Value": {
-                          "ItemId": "(O)535"
-                      }
-                    }
-               ]
-            ],
-        "MinableExperienceGranted": 100
-      },
-      "SpawnRock2": {
+            [
+              {
+                "Weight": 1.0,
+                "Value": {
+                  "ItemId": "(O)390",
+                  "MinStack": 1,
+                  "MaxStack": 3
+                }
+              },
+              {
+                "Weight": 0.05,
+                "Value": {
+                  "ItemId": "(O)535"
+                }
+              }
+            ]
+          ],
+          "MinableExperienceGranted": 100
+        },
+        "SpawnRock2": {
           "Type": "Minable",
           "Condition": "TRUE",
           "MinableTool": "Pickaxe",
           "MinableObjectId": "32",
           "MinableDrops": [
-                 [
-                   {
-                      "Weight": 1.0,
-                         "Value": {
-                          "ItemId": "(O)390",
-                          "MinStack": 1,
-                          "MaxStack": 3
-                      }
-                    },
-                    {
-                      "Weight": 0.05,
-                         "Value": {
-                          "ItemId": "(O)535"
-                      }
-                    }
-               ]
-            ],
-        "MinableExperienceGranted": 100
-      },
-      "SpawnRock3": {
+            [
+              {
+                "Weight": 1.0,
+                "Value": {
+                  "ItemId": "(O)390",
+                  "MinStack": 1,
+                  "MaxStack": 3
+                }
+              },
+              {
+                "Weight": 0.05,
+                "Value": {
+                  "ItemId": "(O)535"
+                }
+              }
+            ]
+          ],
+          "MinableExperienceGranted": 100
+        },
+        "SpawnRock3": {
           "Type": "Minable",
           "Condition": "TRUE",
           "MinableTool": "Pickaxe",
           "MinableObjectId": "40",
           "MinableDrops": [
-                 [
-                   {
-                      "Weight": 1.0,
-                         "Value": {
-                          "ItemId": "(O)390",
-                          "MinStack": 1,
-                          "MaxStack": 3
-                      }
-                    },
-                    {
-                      "Weight": 0.05,
-                         "Value": {
-                          "ItemId": "(O)535"
-                      }
-                    }
-               ]
-            ],
-        "MinableExperienceGranted": 100
-      },
-      "SpawnEarthRock": {
+            [
+              {
+                "Weight": 1.0,
+                "Value": {
+                  "ItemId": "(O)390",
+                  "MinStack": 1,
+                  "MaxStack": 3
+                }
+              },
+              {
+                "Weight": 0.05,
+                "Value": {
+                  "ItemId": "(O)535"
+                }
+              }
+            ]
+          ],
+          "MinableExperienceGranted": 100
+        },
+        "SpawnEarthRock": {
           "Type": "Minable",
           "Condition": "TRUE",
           "MinableTool": "Pickaxe",
           "MinableObjectId": "{{ModId}}_EarthShardRock",
           "MinableDrops": [
-              [
-                  {
-                      "Weight": 1.0,
-                      "Value": {
-                          "ItemId": "(O){{ModId}}_EarthShard"
-                      }
-                  }
-              ]
+            [
+              {
+                "Weight": 1.0,
+                "Value": {
+                  "ItemId": "(O){{ModId}}_EarthShard"
+                }
+              }
+            ]
           ],
           "MinableExperienceGranted": 15
+        }
       }
-    }
     },
     {
       "Action": "EditData",
       "Target": "spacechase0.SpaceCore/SpawningGroups",
       "Entries": {
-          "Charlie.Underpressure_CaveSpawns": {
-              "SpawnablesToSpawn": [
-                  {
-                      "SpawnableIds": [
-                          {
-                              "Weight": 1.0,
-                              "Value": "{{ModId}}_SpawnDino"
-                          }
-                      ],
-                      "Minimum": 1,
-                      "Maximum": 2
-                  },
-                  {
-                    "SpawnableIds": [
-                        {
-                          "Weight": 1.0,
-                          "Value": "SpawnRock"
-                        }
-                    ],
-                    "Minimum": 20,
-                    "Maximum": 35
-                  },
-                  {
-                    "SpawnableIds": [
-                        {
-                          "Weight": 1.0,
-                          "Value": "SpawnRock2"
-                        }
-                    ],
-                    "Minimum": 20,
-                    "Maximum": 35
-                  },
-                  {
-                    "SpawnableIds": [
-                        {
-                          "Weight": 1.0,
-                          "Value": "SpawnRock3"
-                        }
-                    ],
-                    "Minimum": 20,
-                    "Maximum": 35
-                  },
-                  {
-                    "SpawnableIds": [
-                        {
-                          "Weight": 1.0,
-                          "Value": "SpawnEarthRock"
-                        }
-                    ],
-                    "Minimum": 5,
-                    "Maximum": 10
-                  }
-              ]
+        "Charlie.Underpressure_CaveSpawns": {
+          "SpawnablesToSpawn": [
+            {
+              "SpawnableIds": [
+                {
+                  "Weight": 1.0,
+                  "Value": "{{ModId}}_SpawnDino"
+                }
+              ],
+              "Minimum": 1,
+              "Maximum": 2
+            },
+            {
+              "SpawnableIds": [
+                {
+                  "Weight": 1.0,
+                  "Value": "SpawnRock"
+                }
+              ],
+              "Minimum": 20,
+              "Maximum": 35
+            },
+            {
+              "SpawnableIds": [
+                {
+                  "Weight": 1.0,
+                  "Value": "SpawnRock2"
+                }
+              ],
+              "Minimum": 20,
+              "Maximum": 35
+            },
+            {
+              "SpawnableIds": [
+                {
+                  "Weight": 1.0,
+                  "Value": "SpawnRock3"
+                }
+              ],
+              "Minimum": 20,
+              "Maximum": 35
+            },
+            {
+              "SpawnableIds": [
+                {
+                  "Weight": 1.0,
+                  "Value": "SpawnEarthRock"
+                }
+              ],
+              "Minimum": 5,
+              "Maximum": 10
             }
-    }
-  },
-  {
+          ]
+        }
+      }
+    },
+    {
       "Action": "EditData",
       "Target": "spacechase0.SpaceCore/Dungeons",
       "Entries": {
-          "{{ModID}}_TestDungeon": {
-              "Regions": {
-                  "Main": {
-                      "LevelRange": { "Begin": 1, "End": 50 },
-                      "MapPool": [
-                          {
-                              "Weight": 1.0,
-                              "Value": "Maps/Charlie.Underpressure_DungeonFloor"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorTwo"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorThree"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorFour"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorFive"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorSix"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorSeven"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorEight"
-                          },
-                          {
-                            "Weight": 1.0,
-                            "Value": "Maps/Charlie.Underpressure_DungeonFloorNine"
-                          }
-                      ],
-                      "TriggerActionsOnEntry": [
-                          "Charlie.Underpressure_EnemySpawns"
-                      ],
-                      "LocationDataEntry": "UndergroundMine"
-                  }
+        "{{ModID}}_TestDungeon": {
+          "Regions": {
+            "Main": {
+              "LevelRange": {
+                "Begin": 1,
+                "End": 50
               },
-              "SpawnLadders": true,
-              "SpawnsMineshafts": false,
-              "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
-              "LadderExitTile": "5, 8",
-              "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
-              "ElevatorExitTile": "5, 8",
-              "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ]
-              
-          }
+              "MapPool": [
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloor"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorTwo"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorThree"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorFour"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorFive"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorSix"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorSeven"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorEight"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorNine"
+                }
+              ],
+              "TriggerActionsOnEntry": [
+                "Charlie.Underpressure_EnemySpawns"
+              ],
+              "LocationDataEntry": "UndergroundMine"
+            }
+          },
+          "SpawnLadders": true,
+          "SpawnsMineshafts": false,
+          "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
+          "LadderExitTile": "5, 8",
+          "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
+          "ElevatorExitTile": "5, 8",
+          "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ]
+
+        }
       }
     },
     {

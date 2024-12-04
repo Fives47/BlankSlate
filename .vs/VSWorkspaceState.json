@@ -2,9 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\UnderPressure",
-    "\\UnderPressure\\MapChange",
-    "\\UnderPressure\\MapChange\\Assets"
+    "\\UnderPressure\\MapChange"
   ],
-  "SelectedNode": "\\UnderPressure",
   "PreviewInSolutionExplorer": false
 }

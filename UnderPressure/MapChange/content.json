@@ -154,7 +154,7 @@
           //if it's the second year, the first winter has passed
           //if it's the first year, it'll only be true if it's winter
           "When": {
-            "Query: '{{Season}}' = 'winter' OR '{{Year}}' > 1": true,
+            "Query: '{{Season}}' == 'winter' OR '{{Year}}' > 1": true,
             "Query: '{{HasActiveQuest}}' = '14'": false
             //this technically passes if you don't claim the starter mines quest by the first winter...
             //but surely nobody would do that right? is that even possible?
@@ -242,7 +242,7 @@
     {
       "Action": "Load",
       "Target": "Objects/{{ModId}}_LifeSprinkler",
-      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+      "FromFile": "assets/Life_Sprinkler.png" //using the earth shard as a placeholder
     },
     {
       "Action": "Load",
@@ -255,11 +255,8 @@
       "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
     },
 
-    //SPRINKLER FUNCTIONALITY (not yet in): 
-    //allows crops in a radius around it to grow regardless of the weather condition, letting them grow in winter
-    //that sounds like it could be as easy as unchecking a flag or smth
-    //i'll look into how the sprinkler works and try and reverse engineer that when i get around to it
-    //making it upgradeable could be a stretch goal
+    //SPRINKLER FUNCTIONALITY: 
+    //allows crops 4 tiles around it to grow regardless of the weather condition, letting them grow in winter
     {
       "Action": "EditData",
       "Target": "Data/Objects",
@@ -269,7 +266,9 @@
           "DisplayName": "Life Sprinkler",
           "Description": "A sprinkler surging with life energy, allowing crops in its radius to grow in all weather.",
           "Type": "Crafting",
-          "Category": -8
+          "Category": -8,
+
+          "Texture": "Objects/{{ModId}}_LifeSprinkler"
         }
       }
     },

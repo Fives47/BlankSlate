@@ -150,14 +150,9 @@
           "Actions": [
             "AddQuest 201"
           ],
-          //prerequisite implementation
-          //if it's the second year, the first winter has passed
-          //if it's the first year, it'll only be true if it's winter
           "When": {
             "Query: '{{Season}}' == 'winter' OR '{{Year}}' > 1": true,
             "Query: '{{HasActiveQuest}}' = '14'": false
-            //this technically passes if you don't claim the starter mines quest by the first winter...
-            //but surely nobody would do that right? is that even possible?
           }
         },
         "Charlie.Underpressure_CaveSpawns": {
@@ -167,7 +162,11 @@
           "MarkActionApplied": "False",
           "Actions": [
             "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
-          ]
+          ],
+          "When": {
+            "Query: '{{Season}}' == 'winter' OR '{{Year}}' > 1": true,
+            "Query: '{{HasActiveQuest}}' = '14'": false
+          } //i don't think this actually works...
         }
       }
     },

@@ -1,0 +1,39 @@
+{
+    "Changes": [
+
+   	 {
+   		 "Action": "EditData",
+   		 "Target": "Data/Characters",
+   		 "Entries": {
+   			 "EarthSpirit": {
+   				 "DisplayName": "Earth Spirit",
+   				 "Gender": "undefined", //self-explanatory: can be male, female, or undefined (for nonbinary)
+   				 "Age": "Adult", //can be child, teen or adult; affects certain default strings
+   				 "Manner": "Neutral", //can be polite, neutral, or rude; affects certain default strings
+   				 "SocialAnxiety": "shy", //can be outgoing, neutral, or shy; affects certain default strings
+   				 "Optimism": "Neutral", //can be positive, neutral, or negative; affects certain default strings
+   				 "BirthSeason": "fall", //self-explanatory
+   				 "BirthDay": "10", //self-explanatory
+   				 "HomeRegion": "Other", 
+   				 "CanBeRomanced": false,
+    				"CanVisitIsland": false, 
+   				 "SpouseAdopts": true, 
+   				 "IntroductionsQuest": false, 
+   				 "ItemDeliveryQuests": false, 
+   				 "WinterStarParticipant": false,
+   				 
+   				 "Home": [ //set this to where you want the NPC to spawn in normally.  
+   					 {
+   						 "Id": "Default",
+   						 "Location": "Charlie.Underpressure_LobbyRoom",
+   						 "Tile": {
+   							 "X": 26,
+   							 "Y": 18
+   						 }   					 
+                    }
+   				 ]
+   			 },    
+   		 }
+   	 }
+    ]
+}

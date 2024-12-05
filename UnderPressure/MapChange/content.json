@@ -43,6 +43,37 @@
     }
   ],
   "Changes": [
+      {
+          "Action":"Load",
+          "Target":"Characters/Dialogue/EarthSpirit, Characters/schedules/EarthSpirit, Strings/schedules/EarthSpirit",
+          "Fromfile":"assets/data/blank.json"
+
+      },
+      {
+          "Action": "Load",
+          "Target": "Portraits/EarthSpirit",
+          "FromFile": "assets/Earth_Spirit_Portrait.png"
+      },
+      {
+        "LogName": "Base Portraits",
+        "Action": "Load",
+        "Target": "Characters/EarthSpirit",
+        "FromFile": "assets/Earth_Spirit.png"
+      },
+      {
+      "Action": "Include",
+      "FromFile": "assets/data/dispos.json"
+     },
+      {
+        "LogName": "NPC Dialogue",
+      "Action": "Include",
+      "FromFile": "assets/data/dialogue.json"
+      },
+      {
+      "LogName": "NPC Schedule",
+      "Action": "Include",
+      "FromFile": "assets/data/schedule.json"
+    },
     {
       "Action": "Load",
       "Target": "Maps/Forest",

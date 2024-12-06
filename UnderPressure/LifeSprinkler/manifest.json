@@ -1,9 +1,9 @@
 {
     "Name": "LifeSprinkler",
-    "Author": "Zach",
+    "Author": "chum-bot",
     "Version": "1.0.0",
     "Description": "A life sprinkler created for the Under Pressure Stardew Valley mod. It allows crops placed in its radius to grow in winter.",
-    "UniqueID": "Zach.LifeSprinkler",
+    "UniqueID": "chum-bot.LifeSprinkler",
     "EntryDll": "LifeSprinkler.dll",
     "MinimumApiVersion": "4.0.0",
     "UpdateKeys": []

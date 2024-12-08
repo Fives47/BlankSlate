@@ -40,7 +40,19 @@
     {
       "Name": "Charlie.Underpressure_DungeonFloorNine",
       "FromMapFile": "assets/dungeonfloornine.tmx"
-    }
+    },
+    {
+      "Name": "Charlie.Underpressure_DungeonFloorTen",
+      "FromMapFile": "assets/dungeonfloorten.tmx"
+     },
+     {
+      "Name": "Charlie.Underpressure_DungeonFloorEleven",
+      "FromMapFile": "assets/dungeonflooreleven.tmx"
+     },
+     {
+      "Name": "Charlie.Underpressure_DungeonFloorTwelve",
+      "FromMapFile": "assets/dungeonflooreltwelve.tmx"
+     }
   ],
   "Changes": [
     {
@@ -575,6 +587,18 @@
                 {
                   "Weight": 1.0,
                   "Value": "Maps/Charlie.Underpressure_DungeonFloorNine"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorTen"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorEleven"
+                },
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonFloorTwelve"
                 }
               ],
               "TriggerActionsOnEntry": [

@@ -195,26 +195,20 @@
         "{{ModId}}_UPQuest1": {
           "Id": "{{ModId}}_UPQuest1",
           "Trigger": "DayStarted",
+          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
           "Actions": [
             "AddQuest 201"
-          ],
-          "When": {
-            "Query: '{{Season}}' == 'winter' OR '{{Year}}' > 1": true,
-            "Query: '{{HasActiveQuest}}' = '14'": false
-          }
+          ]
         },
         "Charlie.Underpressure_CaveSpawns": {
           "Id": "Charlie.Underpressure_EnemySpawns",
           "Trigger": "Manual",
           "HostOnly": "True",
           "MarkActionApplied": "False",
+          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
           "Actions": [
             "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
-          ],
-          "When": {
-            "Query: '{{Season}}' == 'winter' OR '{{Year}}' > 1": true,
-            "Query: '{{HasActiveQuest}}' = '14'": false
-          } //i don't think this actually works...
+          ]
         }
       }
     },

@@ -260,7 +260,7 @@
     {
       "Action": "Load",
       "Target": "Objects/{{ModId}}_EarthRing",
-      "FromFile": "assets/Earth_Ring.png" //using the earth shard as a placeholder
+      "FromFile": "assets/Earth_Ring.png"
     },
     {
       "Action": "EditData",
@@ -277,13 +277,38 @@
         }
       }
     },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Buffs",
+      "Entries": {
+        "{{ModId}}_EarthRingBuff": {
+          "DisplayName": "Defense Boost",
+          "Description": "+2 Defense",
+          "IconTexture": "Objects/{{ModId}}_EarthRing",
+          "Effects": {
+            "Defense": 2
+          }
+        }
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/WearableData",
+      "Entries": {
+        "(O){{ModId}}_EarthRing": {
+          "BuffIdToApply": "{{ModId}}_EarthRingBuff"
+        }
+      }
+    },
     //the machine and the reward
     //(we'll have a machine that makes the sprinkler using the shards)
     //(because we don't know how to use them and extract their power ourselves)
     {
       "Action": "Load",
       "Target": "Objects/{{ModId}}_LifeSprinkler",
-      "FromFile": "assets/Life_Sprinkler.png" //using the earth shard as a placeholder
+      "FromFile": "assets/Life_Sprinkler.png"
     },
     {
       "Action": "Load",

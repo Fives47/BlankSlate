@@ -51,7 +51,7 @@
      },
      {
       "Name": "Charlie.Underpressure_DungeonFloorTwelve",
-      "FromMapFile": "assets/dungeonflooretwelve.tmx"
+      "FromMapFile": "assets/dungeonfloortwelve.tmx"
      },
      {
       "Name": "Charlie.Underpressure_DungeonCheckpoint",
@@ -349,10 +349,10 @@
       "Entries": {
         "{{ModId}}_EarthShardMachine": {
           "Name": "{{ModId}}_EarthShardMachine",
-          "Displayname": "Earth Shard Machine",
-          "Description": "A machine capable of utilizing the life energy in earth shards.",
+          "Displayname": "Earth Furnace",
+          "Description": "A furnace capable of utilizing the life energy in earth shards.",
           "IsLamp": "True",
-          "Texture": "Objects/{{ModId}}_EarthShardMachine"
+          "Texture": "BigCraftables/{{ModId}}_EarthShardMachine"
         }
       }
     },

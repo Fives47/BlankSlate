@@ -44,19 +44,19 @@
     {
       "Name": "Charlie.Underpressure_DungeonFloorTen",
       "FromMapFile": "assets/dungeonfloorten.tmx"
-     },
-     {
+    },
+    {
       "Name": "Charlie.Underpressure_DungeonFloorEleven",
       "FromMapFile": "assets/dungeonflooreleven.tmx"
-     },
-     {
+    },
+    {
       "Name": "Charlie.Underpressure_DungeonFloorTwelve",
       "FromMapFile": "assets/dungeonfloortwelve.tmx"
-     },
-     {
+    },
+    {
       "Name": "Charlie.Underpressure_DungeonCheckpoint",
       "FromMapFile": "assets/dungeoncheckpoint.tmx"
-     }
+    }
   ],
   "Changes": [
     {
@@ -288,8 +288,7 @@
       "Entries": {
         "{{ModId}}_EarthRingBuff": {
           "DisplayName": "Defense Boost",
-          "Description": "+2 Defense",
-          "IconTexture": "Objects/{{ModId}}_EarthRing",
+          //"IconTexture": "Objects/{{ModId}}_EarthRing",
           "Effects": {
             "Defense": 2
           }
@@ -373,16 +372,20 @@
                 }
               ],
               "LightWhileWorking": {
-                "Radius": "1",
-                "Color": "Green"
+                "Radius": "1.5",
+                "Color": "ForestGreen"
               },
               "OutputItem": [
                 {
                   "ItemId": "{{ModId}}_LifeSprinkler"
                 }
-              ]
+              ],
+              "InvalidCountMessage": "Not enough shards. I want more shards!",
+              "MinutesUntilReady": 200
             }
-          ]
+          ],
+          "InvalidItemMessage": "Item not accepted.",
+          "InvalidItemMessageCondition": "!\"ITEM_ID Input {{ModId}}_EarthShard\""
         }
       }
     },
@@ -610,7 +613,7 @@
                 }
               ],
               "TriggerActionsOnEntry": [
-                
+
               ],
               "LocationDataEntry": "UndergroundMine"
             },

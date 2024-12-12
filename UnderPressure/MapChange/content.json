@@ -313,12 +313,12 @@
     {
       "Action": "Load",
       "Target": "BigCraftables/{{ModId}}_EarthShardMachine", //name pending
-      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+      "FromFile": "assets/Earth_Furnace.png" //using the earth shard as a placeholder
     },
     {
       "Action": "Load",
       "Target": "Machines/{{ModId}}_EarthShardMachine",
-      "FromFile": "assets/Earth_Shard.png" //using the earth shard as a placeholder
+      "FromFile": "assets/Earth_Furnace.png" //using the earth shard as a placeholder
     },
 
     //SPRINKLER FUNCTIONALITY: 
@@ -347,7 +347,8 @@
           "Name": "{{ModId}}_EarthShardMachine",
           "Displayname": "Earth Shard Machine",
           "Description": "A machine capable of utilizing the life energy in earth shards.",
-          "IsLamp": "True"
+          "IsLamp": "True",
+          "Texture": "Objects/{{ModId}}_EarthShardMachine"
         }
       }
     },

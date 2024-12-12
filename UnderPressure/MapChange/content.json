@@ -51,7 +51,11 @@
      },
      {
       "Name": "Charlie.Underpressure_DungeonFloorTwelve",
-      "FromMapFile": "assets/dungeonflooreltwelve.tmx"
+      "FromMapFile": "assets/dungeonflooretwelve.tmx"
+     },
+     {
+      "Name": "Charlie.Underpressure_DungeonCheckpoint",
+      "FromMapFile": "assets/dungeoncheckpoint.tmx"
      }
   ],
   "Changes": [
@@ -566,10 +570,10 @@
       "Entries": {
         "{{ModID}}_TestDungeon": {
           "Regions": {
-            "Main": {
+            "main": {
               "LevelRange": {
                 "Begin": 1,
-                "End": 50
+                "End": 10
               },
               "MapPool": [
                 {
@@ -587,7 +591,35 @@
                 {
                   "Weight": 1.0,
                   "Value": "Maps/Charlie.Underpressure_DungeonFloorFour"
-                },
+                }
+              ],
+              "TriggerActionsOnEntry": [
+                "Charlie.Underpressure_EnemySpawns"
+              ],
+              "LocationDataEntry": "UndergroundMine"
+            },
+            "main2": {
+              "LevelRange": {
+                "Begin": 11,
+                "End": 11
+              },
+              "MapPool": [
+                {
+                  "Weight": 1.0,
+                  "Value": "Maps/Charlie.Underpressure_DungeonCheckpoint"
+                }
+              ],
+              "TriggerActionsOnEntry": [
+                
+              ],
+              "LocationDataEntry": "UndergroundMine"
+            },
+            "Main": {
+              "LevelRange": {
+                "Begin": 12,
+                "End": 20
+              },
+              "MapPool": [
                 {
                   "Weight": 1.0,
                   "Value": "Maps/Charlie.Underpressure_DungeonFloorFive"
@@ -628,13 +660,13 @@
             }
           },
           "SpawnLadders": true,
-          "SpawnsMineshafts": false,
+          "SpawnMineshafts": false,
           "LadderExitLocation": "Charlie.Underpressure_LobbyRoom",
           "LadderExitTile": "5, 8",
           "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
           "ElevatorExitTile": "5, 8",
-          "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ]
-
+          "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
+          "LadderTileSeet": "assets/mine_vines_tileset.tmx"
         }
       }
     },
@@ -666,6 +698,38 @@
           "Layer": "Buildings",
           "SetProperties": {
             "Action": "spacechase0.SpaceCore_DungeonLadderExit"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_DungeonCheckpoint",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 6,
+            "Y": 5
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "spacechase0.SpaceCore_DungeonLadderExit"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Charlie.Underpressure_DungeonCheckpoint",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 15,
+            "Y": 11
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "spacechase0.SpaceCore_DungeonLadder"
           }
         }
       ]

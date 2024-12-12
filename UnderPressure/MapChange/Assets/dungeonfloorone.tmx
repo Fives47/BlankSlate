@@ -4,7 +4,7 @@
   <property name="AmbientLight" value="0 0 0"/>
   <property name="spacechase0.SpaceCore_DungeonLadderEntrance" value="4 17"/>
  </properties>
- <tileset firstgid="1" source="mine_vines_tileset.tsx"/>
+ <tileset firstgid="1" source="mine..tsx"/>
  <layer id="1" name="Back" width="40" height="30">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

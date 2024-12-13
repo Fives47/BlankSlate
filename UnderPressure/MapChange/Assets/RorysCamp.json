@@ -66,7 +66,7 @@
   "133": "Building/Feeding Animals/Robin, the local carpenter, lives north of town. In exchange for raw materials and money, she'll construct new buildings on your farm. If you build a silo, you can start harvesting your own grass with the scythe, and store it to feed your animals./Build a Silo./Silo/-1/100/-1/true",
   "134": "Basic/The Giant Stump/The big tree to the south of my farm blew down. With 100 hardwood, I could turn the stump into something interesting.../Fix up the giant stump./-1/-1/0/-1/false",
   //Mod Quests
-  "201": "Location/Going Underground/Something's going on below the surface and a miner needs your help figuring it out.'/Head to Rory's Camp'/Charlie.Underpressure_LobbyRoom/-1/0/-1/false",
-  "202": "Basic/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 30 in the underground./203/203/500/-1/false",
-  "203": "Basic/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 50 in the underground./203/203/0/-1/false"
+  "201": "Location/Going Underground/Something's going on below the surface and a miner needs your help figuring it out.'/Head to Rory's Camp'/Charlie.Underpressure_LobbyRoom/202/0/-1/false",
+  "202": "Location/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 30 in the underground./203/203/500/-1/false",
+  "203": "Location/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 50 in the underground./203/203/0/-1/false"
 }

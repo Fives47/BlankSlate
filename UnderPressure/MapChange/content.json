@@ -115,7 +115,7 @@
       "LogName": "Base Portraits",
       "Action": "Load",
       "Target": "Characters/EarthSpirit",
-      "FromFile": "assets/Earth_Spirit.png"
+      "FromFile": "assets/Earth_Spirit_NPC.png"
     },
     {
       "Action": "Include",
@@ -675,8 +675,8 @@
                   "Value": "SpawnRock2"
                 }
               ],
-              "Minimum": 20,
-              "Maximum": 35
+              "Minimum": 10,
+              "Maximum": 25
             },
             {
               "SpawnableIds": [
@@ -685,8 +685,8 @@
                   "Value": "SpawnRock3"
                 }
               ],
-              "Minimum": 20,
-              "Maximum": 35
+              "Minimum": 10,
+              "Maximum": 25
             },
             {
               "SpawnableIds": [
@@ -852,7 +852,7 @@
           "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
           "ElevatorExitTile": "5, 8",
           "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
-          "LadderTileSeet": "assets/mine_vines_tileset.tmx"
+          "LadderTileSet": "assets/mine_vines_tileset.tmx"
         }
       }
     },

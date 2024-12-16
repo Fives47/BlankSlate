@@ -103,6 +103,11 @@
     },
     {
       "Action": "Load",
+      "Target": "assets/EarthSpiritCycle",
+      "FromFile": "assets/Earth_Spirit_Cycle.png"
+    },
+    {
+      "Action": "Load",
       "Target": "Portraits/EarthSpirit",
       "FromFile": "assets/Earth_Spirit_Portrait.png"
     },
@@ -486,6 +491,25 @@
           ],
           "MonsterAdditionalData": {}
         },
+        "Charlie.Underpressure_EarthSprite": {
+          "Type": "Monster",
+          "MonsterType": "MetalHead",
+          "MonsterName": "Green Slime",
+          "MonsterTextureOverride": "assets/EarthSpiritCycle",
+          "MonsterDropOverride": [
+            [
+              {
+                "Weight": 1.0,
+                "Value": {
+                  "ItemId": "(O){{ModId}}_EarthShard",
+                  "MinStack": 5,
+                  "MaxStack": 10
+                }
+              }
+            ]
+          ],
+          "MonsterAdditionalData": {}
+        },
         "SpawnRock": {
           "Type": "Minable",
           "Condition": "TRUE",
@@ -595,7 +619,17 @@
                 }
               ],
               "Minimum": 1,
-              "Maximum": 2
+              "Maximum": 5
+            },
+            {
+              "SpawnableIds": [
+                {
+                  "Weight": 1.0,
+                  "Value": "{{ModId}}_EarthSprite"
+                }
+              ],
+              "Minimum": 5,
+              "Maximum": 5
             },
             {
               "SpawnableIds": [

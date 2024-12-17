@@ -108,7 +108,7 @@
     },
     {
       "Action": "Load",
-      "Target": "assets/{{ModID}}_Earth_Spirit_Portrait.png",
+      "Target": "Portraits/EarthSpirit",
       "FromFile": "assets/Earth_Spirit_Portrait.png"
     },
     {
@@ -282,7 +282,7 @@
       "Action": "EditData",
       "Target": "Data/Events/Charlie.Underpressure_LobbyRoom",
       "Entries": {
-        "{{ModId}}_201/HasItem {{ModId}}_EarthRing": "none/8 9/farmer 10 15 0 {{ModId}}_Dobson 8 6 2/skippable/addConversationTopic cc_Begin/showFrame {{ModId}}_Dobson 5/move farmer 0 -3 0/pause 1000/speak {{ModId}}_Dobson \"Oh good, you made it.#$b#Name's Rory. I'm a miner around these parts.#$b#I prefer to stick to the outskirts of the area, but things have changed recently.#$b#There was a tremor last night. Small enough that most folks won't have noticed.#$b#I don't know what caused it but it looks like it stirred up the critters down there something fierce.#$b#I've been picking off the ones that get up here but they just keep coming.#$b#I need someone to go down there while I hold down the fort. Heard you might be the person for the job.#$b#Up for a bit of spelunking?\"/pause 800/end"
+        "{{ModId}}_201/GameStateQuery LOCATION_NAME Here {{ModId}}_LobbyRoom": "none/8 9/farmer 10 15 0 {{ModId}}_Dobson 8 6 2/skippable/addConversationTopic cc_Begin/showFrame {{ModId}}_Dobson 5/move farmer 0 -3 0/pause 1000/speak {{ModId}}_Dobson \"Oh good, you made it.#$b#Name's Rory. I'm a miner around these parts.#$b#I prefer to stick to the outskirts of the area, but things have changed recently.#$b#There was a tremor last night. Small enough that most folks won't have noticed.#$b#I don't know what caused it but it looks like it stirred up the critters down there something fierce.#$b#I've been picking off the ones that get up here but they just keep coming.#$b#I need someone to go down there while I hold down the fort. Heard you might be the person for the job.#$b#Up for a bit of spelunking?\"/pause 800/end"
       }
     },
     {
@@ -415,7 +415,9 @@
       "Entries": {
         "{{ModId}}_EarthRingBuff": {
           "DisplayName": "Defense Boost",
-          //"IconTexture": "Objects/{{ModId}}_EarthRing",
+          "Description": "+2 Defense",
+          "Duration": -2,
+          "IconTexture": "Objects/{{ModId}}_EarthRing",
           "Effects": {
             "Defense": 2
           }

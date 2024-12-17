@@ -410,14 +410,19 @@
     },
 
     {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthRingBuff",
+      "FromFile": "assets/ring_buff_asset.png"
+    },
+
+    {
       "Action": "EditData",
       "Target": "Data/Buffs",
       "Entries": {
         "{{ModId}}_EarthRingBuff": {
           "DisplayName": "Defense Boost",
-          "Description": "+2 Defense",
           "Duration": -2,
-          "IconTexture": "Objects/{{ModId}}_EarthRing",
+          "IconTexture": "Objects/{{ModId}}_EarthRingBuff",
           "Effects": {
             "Defense": 2
           }

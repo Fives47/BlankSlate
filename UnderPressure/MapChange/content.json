@@ -98,7 +98,7 @@
     {
       "Action": "Load",
       "Target": "Characters/Dialogue/EarthSpirit, Characters/schedules/EarthSpirit, Strings/schedules/EarthSpirit",
-      "Fromfile": "assets/data/blank.json"
+      "FromFile": "assets/data/blank.json"
 
     },
     {
@@ -115,7 +115,7 @@
       "LogName": "Base Portraits",
       "Action": "Load",
       "Target": "Characters/EarthSpirit",
-      "FromFile": "assets/Earth_Spirit_NPC.png"
+      "FromFile": "assets/Earth_Spirit.png"
     },
     {
       "Action": "Include",
@@ -241,8 +241,8 @@
       "Target": "Data/Quests",
       "Entries": {
         "{{ModId}}_201": "Location/Going Underground/Something's going on below the surface and a miner needs your help figuring it out.'/Head to Rory's Camp'/Charlie.Underpressure_LobbyRoom/{{ModId}}_202/50/-1/false",
-        "{{ModId}}_202": "Location/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 30 in the underground./Charlie.Underpressure_DungeonCheckpoint/{{ModId}}_203/500/-1/false",
-        "{{ModId}}_203": "Location/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 50 in the underground./Charlie.Underpressure_DungeonFinal/{{ModId}}_204/0/-1/false",
+        "{{ModId}}_202": "Location/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 15 in the underground./Charlie.Underpressure_DungeonCheckpoint/{{ModId}}_203/500/-1/false",
+        "{{ModId}}_203": "Location/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 30 in the underground./Charlie.Underpressure_DungeonFinal/{{ModId}}_204/0/-1/false",
         "{{ModId}}_204": "Location/Expert Opinion/The spirit left something on the ground. Maybe the wizard can shed some light on this./Bring the ring to the Wizard/WizardHouse/{{ModId}}_205/0/-1/false",
         "{{ModId}}_205": "Location/Talking the Talk/I should be able to talk to that spirit now. Best head back to the cave./Find the spirit within the underground/Charlie.Underpressure_LobbyRoom/{{ModId}}_206/0/-1/false",
         "{{ModId}}_206": "Location/With the spirit's insight, I should be able to clear things up at the bottom./Head down to the bottom of the underground and finish things once and for all./Charlie.Underpressure_LobbyRoom/-1/500/-1/false"
@@ -258,17 +258,17 @@
     //events and triggers
     {
       "Action": "Load",
-      "Target": "Data/Events/{{ModId}}_Charlie.Underpressure_LobbyRoom",
+      "Target": "Data/Events/Charlie.Underpressure_LobbyRoom",
       "FromFile": "assets/RorysCamp.json"
     },
     {
       "Action": "Load",
-      "Target": "Data/Events/{{ModId}}_Charlie.Underpressure_DungeonCheckpoint",
+      "Target": "Data/Events/Charlie.Underpressure_DungeonCheckpoint",
       "FromFile": "assets/DungeonCheckpoint.json"
     },
     {
       "Action": "Load",
-      "Target": "Data/Events/{{ModId}}_Charlie.Underpressure_DungeonFinal",
+      "Target": "Data/Events/Charlie.Underpressure_DungeonFinal",
       "FromFile": "assets/DungeonFinal.json"
     },
     {
@@ -280,7 +280,7 @@
     },
     {
       "Action": "EditData",
-      "Target": "Data/Events/{{ModId}}_Charlie.Underpressure_LobbyRoom",
+      "Target": "Data/Events/Charlie.Underpressure_LobbyRoom",
       "Entries": {
         "{{ModId}}_201/HasItem {{ModId}}_EarthRing": "none/8 9/farmer 10 15 0 {{ModId}}_Dobson 10 15 2/skippable/addConversationTopic cc_Begin/showFrame {{ModId}}_Dobson 1/move farmer -2 -3 0/pause 1000/speak {{ModId}}_Dobson \"Oh good, you made it.\"/pause 800/end warpOut"
       }
@@ -675,8 +675,8 @@
                   "Value": "SpawnRock2"
                 }
               ],
-              "Minimum": 10,
-              "Maximum": 25
+              "Minimum": 20,
+              "Maximum": 35
             },
             {
               "SpawnableIds": [
@@ -685,8 +685,8 @@
                   "Value": "SpawnRock3"
                 }
               ],
-              "Minimum": 10,
-              "Maximum": 25
+              "Minimum": 20,
+              "Maximum": 35
             },
             {
               "SpawnableIds": [
@@ -778,8 +778,8 @@
             },
             "Main": {
               "LevelRange": {
-                "Begin": 16,
-                "End": 29
+                "Begin": 31,
+                "End": 49
               },
               "MapPool": [
                 {
@@ -852,7 +852,7 @@
           "ElevatorExitLocation": "Charlie.Underpressure_LobbyRoom",
           "ElevatorExitTile": "5, 8",
           "FloorsWithElevator": [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ],
-          "LadderTileSet": "assets/mine_vines_tileset.tmx"
+          "LadderTileSeet": "assets/mine_vines_tileset.tmx"
         }
       }
     },

@@ -108,7 +108,7 @@
     },
     {
       "Action": "Load",
-      "Target": "Portraits/EarthSpirit",
+      "Target": "assets/{{ModID}}_Earth_Spirit_Portrait.png",
       "FromFile": "assets/Earth_Spirit_Portrait.png"
     },
     {
@@ -240,19 +240,18 @@
       "Action": "EditData",
       "Target": "Data/Quests",
       "Entries": {
-        "{{ModId}}_201": "Location/Going Underground/Something's going on below the surface and a miner needs your help figuring it out.'/Head to Rory's Camp'/Charlie.Underpressure_LobbyRoom/{{ModId}}_202/50/-1/false",
+        "{{ModId}}_201": "Location/Going Underground/Something's going on below the surface and a miner needs your help figuring it out.'/Head to Rory's Camp'/Charlie.Underpressure_LobbyRoom/{{ModId}}_202/0/-1/false",
         "{{ModId}}_202": "Location/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 15 in the underground./Charlie.Underpressure_DungeonCheckpoint/{{ModId}}_203/500/-1/false",
         "{{ModId}}_203": "Location/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 30 in the underground./Charlie.Underpressure_DungeonFinal/{{ModId}}_204/0/-1/false",
         "{{ModId}}_204": "Location/Expert Opinion/The spirit left something on the ground. Maybe the wizard can shed some light on this./Bring the ring to the Wizard/WizardHouse/{{ModId}}_205/0/-1/false",
-        "{{ModId}}_205": "Location/Talking the Talk/I should be able to talk to that spirit now. Best head back to the cave./Find the spirit within the underground/Charlie.Underpressure_LobbyRoom/{{ModId}}_206/0/-1/false",
-        "{{ModId}}_206": "Location/With the spirit's insight, I should be able to clear things up at the bottom./Head down to the bottom of the underground and finish things once and for all./Charlie.Underpressure_LobbyRoom/-1/500/-1/false"
+        "{{ModId}}_205": "Location/Talking the Talk/I should be able to talk to that spirit now. Best head back to the cave./Head down to the bottom of the underground and finish things once and for all./Charlie.Underpressure_LobbyRoom/-1/500/-1/false"
       }
     },
     {
       "Action": "EditData",
       "Target": "Data/mail",
       "Entries": {
-        "{{ModId}}_RoryHelp": "@,^^No doubt you heard the rumbling last night. Something bad's happening underground and I need your help looking into it. The quakes opened a cave enterance last night, meet me there.^-Rory"
+        "{{ModId}}_RoryHelp": "@,^^No doubt you heard the rumbling last night. Something bad's happening underground and I need your help looking into it. The shard in this letter is one of many. There's more of them if you're willing to help. The quakes opened a cave enterance near the tower, meet me there.^-Rory"
       }
     },
     //events and triggers
@@ -282,14 +281,28 @@
       "Action": "EditData",
       "Target": "Data/Events/Charlie.Underpressure_LobbyRoom",
       "Entries": {
-        "{{ModId}}_201/GameStateQuery LOCATION_NAME Here {{ModId}}_LobbyRoom": "none/8 9/farmer 10 15 0 {{ModId}}_Dobson 8 6 2/skippable/addConversationTopic cc_Begin/showFrame {{ModId}}_Dobson 5/move farmer 0 -3 0/pause 1000/speak {{ModId}}_Dobson \"Oh good, you made it.#$b#Name's Rory. I'm a miner around these parts.#$b#I prefer to stick to the outskirts of the area, but things have changed recently.#$b#There was a tremor last night. Small enough that most folks won't have noticed.#$b#I don't know what caused it but it looks like it stirred up the critters down there something fierce.#$b#I've been picking off the ones that get up here but they just keep coming.#$b#I need someone to go down there while I hold down the fort. Heard you might be the person for the job.#$b#Up for a bit of spelunking?\"/pause 800/end"
+        "{{ModId}}_201/HasItem {{ModId}}_EarthShard": "none/8 9/farmer 10 15 0 {{ModId}}_Dobson 8 6 2/skippable/addConversationTopic cc_Begin/showFrame {{ModId}}_Dobson 5/move farmer 0 -3 0/pause 1000/speak {{ModId}}_Dobson \"Oh good, you made it.#$b#Name's Rory. I'm a miner around these parts.#$b#I prefer to stick to the outskirts of the area, but things have changed recently.#$b#There was a tremor last night. Small enough that most folks won't have noticed.#$b#I don't know what caused it but it looks like it stirred up the critters down there something fierce.#$b#I've been picking off the ones that get up here but they just keep coming.#$b#I need someone to go down there while I hold down the fort. Heard you might be the person for the job.#$b#Up for a bit of spelunking?\"/pause 800/end"
       }
     },
     {
       "Action": "EditData",
       "Target": "Data/Events/Charlie.Underpressure_DungeonCheckpoint",
       "Entries": {
-        "{{ModId}}_201/HasItem {{ModId}}_EarthRing": "none/9 9/farmer 6 6 2 {{ModId}}_EarthSpirit 9 9 0/skippable/pause 1000/move farmer 0 2 2/move {{ModId}}_EarthSpirit 0 6 0/pause 1000/pause 800/end"
+        "{{ModId}}_202/HasItem {{ModId}}_EarthShard": "none/9 9/farmer 6 6 2 {{ModId}}_EarthSpirit 9 9 0/skippable/pause 1000/move farmer 0 2 2/move {{ModId}}_EarthSpirit 0 6 0/pause 1000/pause 800/end"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Events/Charlie.Underpressure_DungeonFinal",
+      "Entries": {
+        "{{ModId}}_203/HasItem {{ModId}}_EarthShard": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/skippable/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/pause 1000/end"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Events/Charlie.Underpressure_DungeonFinal",
+      "Entries": {
+        "{{ModId}}_205/HasItem {{ModId}}_EarthRing": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/skippable/addItem {{ModId}}_EarthShardMachine/pause 1000/end"
       }
     },
     {
@@ -313,7 +326,7 @@
         "{{ModId}}_UPMail": {
           "Id": "{{ModId}}_UPMail",
           "Trigger": "DayStarted",
-          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
+          //"Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
           "Actions": [
             "AddMail Current {{ModId}}_RoryHelp now"
           ]
@@ -321,9 +334,10 @@
         "{{ModId}}_UPQuest1": {
           "Id": "{{ModId}}_UPQuest1",
           "Trigger": "DayStarted",
-          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
+          //"Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
           "Actions": [
-            "AddQuest {{ModId}}_201"
+            "AddQuest {{ModId}}_201",
+            "AddItem (0){{ModId}}_EarthShard"
           ]
           /*
           "When": {
@@ -336,7 +350,7 @@
           "Trigger": "Manual",
           "HostOnly": "True",
           "MarkActionApplied": "False",
-          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
+          //"Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
           "Actions": [
             "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
           ]
@@ -394,6 +408,11 @@
       "FromFile": "assets/Earth_Ring.png"
     },
     {
+      "Action": "Load",
+      "Target": "Objects/{{ModId}}_EarthRingBuff",
+      "FromFile": "assets/ring_buff_asset.png"
+    },
+    {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
@@ -407,12 +426,6 @@
           "Texture": "Objects/{{ModId}}_EarthRing"
         }
       }
-    },
-
-    {
-      "Action": "Load",
-      "Target": "Objects/{{ModId}}_EarthRingBuff",
-      "FromFile": "assets/ring_buff_asset.png"
     },
 
     {

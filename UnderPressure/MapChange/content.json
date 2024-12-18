@@ -213,7 +213,7 @@
       "Target": "Data/Characters",
       "Entries": {
         "{{ModId}}_Dobson": {
-          "DisplayName": "Dobson",
+          "DisplayName": "Rory",
           "BirthSeason": "Summer",
           "BirthDay": 7,
           "HomeRegion": "Town",
@@ -260,12 +260,12 @@
     },
     {
       "Action": "Load",
-      "Target": "Data/Events/Charlie.Underpressure_DungeonCheckpoint",
+      "Target": "Data/Events/DungeonCheckpoint",
       "FromFile": "assets/DungeonCheckpoint.json"
     },
     {
       "Action": "Load",
-      "Target": "Data/Events/Charlie.Underpressure_DungeonFinal",
+      "Target": "Data/Events/DungeonFinal",
       "FromFile": "assets/DungeonFinal.json"
     },
     {
@@ -277,23 +277,23 @@
     },
     {
       "Action": "EditData",
-      "Target": "Data/Events/Charlie.Underpressure_LobbyRoom",
+      "Target": "Data/Events/{{ModId}}_LobbyRoom",
       "Entries": {
         "{{ModId}}_201/": "none/8 9/farmer 10 15 0 {{ModId}}_Dobson 8 6 2/skippable/addConversationTopic cc_Begin/showFrame {{ModId}}_Dobson 5/move farmer 0 -3 0/pause 1000/speak {{ModId}}_Dobson \"Oh good, you made it.#$b#Name's Rory. I'm a miner around these parts.#$b#I prefer to stick to the outskirts of the area, but things have changed recently.#$b#There was a tremor last night. Small enough that most folks won't have noticed.#$b#I don't know what caused it but it looks like it stirred up the critters down there something fierce.#$b#I've been picking off the ones that get up here but they just keep coming.#$b#I need someone to go down there while I hold down the fort. Heard you might be the person for the job.#$b#Up for a bit of spelunking?\"/pause 800/end"
       }
     },
     {
       "Action": "EditData",
-      "Target": "Data/Events/Charlie.Underpressure_DungeonCheckpoint",
+      "Target": "Data/Events/DungeonCheckpoint",
       "Entries": {
-        "{{ModId}}_202/": "none/9 9/farmer 6 6 2 {{ModId}}_EarthSpirit 9 9 0/skippable/pause 1000/move farmer 0 2 2/move {{ModId}}_EarthSpirit 0 6 0/pause 1000/pause 800/end"
+        "{{ModId}}_202/": "none/9 9/farmer 6 6 2 {{ModId}}_EarthSpirit 9 9 0/skippable/pause 1000/move farmer 0 2 2/move {{ModId}}_EarthSpirit 0 6 0/pause 1000/pause 800/end",
       }
     },
     {
       "Action": "EditData",
-      "Target": "Data/Events/Charlie.Underpressure_DungeonFinal",
+      "Target": "Data/Events/DungeonFinal",
       "Entries": {
-        "{{ModId}}_203/GameStateQuery PLAYER_VISITED_LOCATION Current {{ModId}}_DungeonCheckpoint": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/addCraftingRecipe {{ModId}}_EarthRingRecipe/pause 1000/end",
+        "{{ModId}}_203/": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/addCraftingRecipe {{ModId}}_EarthRingRecipe/pause 1000/end",
         "{{ModId}}_205/GameStateQuery PLAYER_HAS_RUN_TRIGGER_ACTION Current {{ModId}}_OnRingShownToWizard": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/addItem {{ModId}}_EarthShardMachine/addCraftingRecipe {{ModId}}_EarthShardMachineRecipe/pause 1000/end"
       }
     },
@@ -304,7 +304,7 @@
         "{{ModId}}_OnCheckpointReached": {
           "Id": "{{ModId}}_OnCheckpointReached",
           "Trigger": "LocationChanged",
-          "Condition": "PLAYER_VISITED_LOCATION Current \"{{ModId}}_DungeonCheckpoint\"",
+          "Condition": "PLAYER_LOCATION_UNIQUE_NAME Current SpaceCore_Dungeon_Charlie.Underpressure_EarthSpiritDungeon_30",
           "Actions": [
             "AddItem (O){{ModId}}_EarthShard"
           ]
@@ -318,7 +318,7 @@
         "{{ModId}}_OnRingShownToWizard": {
           "Id": "{{ModId}}_OnRingShownToWizard",
           "Trigger": "LocationChanged",
-          "Condition": "PLAYER_LOCATION_NAME Current \"WizardHouse\" PLAYER_HAS_ITEM Current {{ModId}}_EarthRing",
+          "Condition": "PLAYER_LOCATION_NAME Current WizardHouse, PLAYER_HAS_ITEM Current {{ModId}}_EarthRing",
           "Actions": [
             "AddItem (O){{ModId}}_EarthShard" //just to check if it works
           ]
@@ -331,10 +331,10 @@
       "Target": "Data/Quests",
       "Entries": {
         "{{ModId}}_201": "Location/Going Underground/Something's going on below the surface and a miner needs your help figuring it out.'/Head to Rory's Camp'/{{ModId}}_LobbyRoom/{{ModId}}_202/0/-1/false",
-        "{{ModId}}_202": "Location/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 15 in the underground./{{ModId}}_DungeonCheckpoint/{{ModId}}_203/500/-1/false",
-        "{{ModId}}_203": "Location/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 30 in the underground./{{ModId}}_DungeonFinal/{{ModId}}_204/0/-1/false",
+        "{{ModId}}_202": "Location/Rumble in the Rubble/Rory says there's something riling the creatures up in a new section of the underground. He wants me to go deeper to fight them back and look into what's causing it.../Reach level 15 in the underground./SpaceCore_Dungeon_{{ModId}}_EarthSpiritDungeon_15/{{ModId}}_203/500/-1/false",
+        "{{ModId}}_203": "Location/Further Down/One of these spirits seems peaceful. Might be worth looking for as I go deeper./Reach level 30 in the underground./SpaceCore_Dungeon_{{ModId}}_EarthSpiritDungeon_30/{{ModId}}_204/0/-1/false",
         "{{ModId}}_204": "Location/Expert Opinion/The spirit left something on the ground. Maybe the wizard can shed some light on this./Bring the ring to the Wizard/WizardHouse/{{ModId}}_205/0/-1/false",
-        "{{ModId}}_205": "Location/Talking the Talk/I should be able to talk to that spirit now. Best head back to the cave./Head down to the bottom of the underground and finish things once and for all./{{ModId}}_DungeonFinal/-1/500/-1/false"
+        "{{ModId}}_205": "Location/Talking the Talk/I should be able to talk to that spirit now. Best head back to the cave./Head down to the bottom of the underground and finish things once and for all./SpaceCore_Dungeon_{{ModId}}_EarthSpiritDungeon_30/-1/500/-1/false"
       }
     },
     {
@@ -344,30 +344,26 @@
         "{{ModId}}_UPMail": {
           "Id": "{{ModId}}_UPMail",
           "Trigger": "DayStarted",
-          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
+          "Condition": "DAYS_PLAYED 85, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
           "Actions": [
-            "AddMail Current {{ModId}}_RoryHelp now"
+            "AddMail Current {{ModId}}_RoryHelp now",
+            "AddItem (O){{ModId}}_EarthShard"
           ]
         },
         "{{ModId}}_UPQuest1": {
           "Id": "{{ModId}}_UPQuest1",
           "Trigger": "DayStarted",
-          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
+          "Condition": "DAYS_PLAYED 85, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
           "Actions": [
             "AddQuest {{ModId}}_201"
           ]
-          /*
-          "When": {
-            "HasFlag": "{{ModId}}_RoryHelp"
-          }
-          */
         },
         "Charlie.Underpressure_CaveSpawns": {
           "Id": "Charlie.Underpressure_EnemySpawns",
           "Trigger": "Manual",
           "HostOnly": "True",
           "MarkActionApplied": "False",
-          "Condition": "ANY \"SEASON Winter\" \"MINE_LOWEST_LEVEL_REACHED 5 120\" \"YEAR 2 100\"",
+          "Condition": "DAYS_PLAYED 85, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
           "Actions": [
             "spacechase0.SpaceCore_TriggerSpawnGroup Charlie.Underpressure_CaveSpawns Target"
           ]
@@ -777,7 +773,7 @@
             "main": {
               "LevelRange": {
                 "Begin": 1,
-                "End": 14
+                "End": 1
               },
               "MapPool": [
                 {
@@ -802,19 +798,11 @@
                 },
                 {
                   "Weight": 1.0,
-                  "Value": "Maps/Charlie.Underpressure_DungeonFloorTwelve"
-                },
-                {
-                  "Weight": 1.0,
                   "Value": "Maps/Charlie.Underpressure_DungeonFloorSixteen"
                 },
                 {
                   "Weight": 1.0,
                   "Value": "Maps/Charlie.Underpressure_DungeonFloorNineteen"
-                },
-                {
-                  "Weight": 1.0,
-                  "Value": "Maps/Charlie.Underpressure_DungeonFloorTwenty"
                 }
               ],
               "TriggerActionsOnEntry": [
@@ -824,8 +812,8 @@
             },
             "main2": {
               "LevelRange": {
-                "Begin": 15,
-                "End": 15
+                "Begin": 2,
+                "End": 2
               },
               "MapPool": [
                 {
@@ -836,12 +824,12 @@
               "TriggerActionsOnEntry": [
 
               ],
-              "LocationDataEntry": "UndergroundMine"
+              "LocationDataEntry": "DungeonCheckpoint"
             },
             "Main": {
               "LevelRange": {
-                "Begin": 16,
-                "End": 29
+                "Begin": 3,
+                "End": 3
               },
               "MapPool": [
                 {
@@ -892,8 +880,8 @@
             },
             "main3": {
               "LevelRange": {
-                "Begin": 30,
-                "End": 30
+                "Begin": 4,
+                "End": 4
               },
               "MapPool": [
                 {
@@ -904,7 +892,7 @@
               "TriggerActionsOnEntry": [
 
               ],
-              "LocationDataEntry": "UndergroundMine"
+              "LocationDataEntry": "DungeonFinal"
             }
           },
           "SpawnLadders": true,

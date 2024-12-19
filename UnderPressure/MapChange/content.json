@@ -773,7 +773,7 @@
             "main": {
               "LevelRange": {
                 "Begin": 1,
-                "End": 1
+                "End": 14
               },
               "MapPool": [
                 {
@@ -812,8 +812,8 @@
             },
             "main2": {
               "LevelRange": {
-                "Begin": 2,
-                "End": 2
+                "Begin": 15,
+                "End": 15
               },
               "MapPool": [
                 {
@@ -828,8 +828,8 @@
             },
             "Main": {
               "LevelRange": {
-                "Begin": 3,
-                "End": 3
+                "Begin": 16,
+                "End": 29
               },
               "MapPool": [
                 {
@@ -880,8 +880,8 @@
             },
             "main3": {
               "LevelRange": {
-                "Begin": 4,
-                "End": 4
+                "Begin": 30,
+                "End": 30
               },
               "MapPool": [
                 {

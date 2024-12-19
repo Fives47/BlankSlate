@@ -240,6 +240,23 @@
     },
     {
       "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "{{ModId}}_EarthSpirit": {
+          "DisplayName": "Earth Spirit",
+          "BirthSeason": "Fall",
+          "BirthDay": 5,
+          "HomeRegion": "Town",
+          "Gender": "Male",
+          "SocialAnxiety": "Neutral",
+          "Optimism": "Positive",
+
+          "CanBeRomanced": false
+        }
+      }
+    },
+    {
+      "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
         "{{ModId}}_Dobson": "You're giving this to me? This is amazing!/207 232 233 400/Thank you! This is a very interesting specimen./-5 -79 422/...What is this?/80 330/This is disgusting./2/That was very thoughtful of you./-4/ "
@@ -286,15 +303,15 @@
       "Action": "EditData",
       "Target": "Data/Events/DungeonCheckpoint",
       "Entries": {
-        "{{ModId}}_202/": "none/9 9/farmer 6 6 2 {{ModId}}_EarthSpirit 9 9 0/skippable/pause 1000/move farmer 0 2 2/move {{ModId}}_EarthSpirit 0 6 0/pause 1000/pause 800/end",
+        "{{ModId}}_202/": "none/9 9/farmer 6 6 2 {{ModId}}_EarthSpirit 9 9 0/skippable/pause 1000/move farmer 0 2 2/move {{ModId}}_EarthSpirit 0 6 0/pause 1000/pause 800/end"
       }
     },
     {
       "Action": "EditData",
       "Target": "Data/Events/DungeonFinal",
       "Entries": {
-        "{{ModId}}_203/": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/skippable/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/addCraftingRecipe {{ModId}}_EarthRingRecipe/pause 1000/end",
-        "{{ModId}}_205/GameStateQuery PLAYER_HAS_RUN_TRIGGER_ACTION Current {{ModId}}_OnRingShownToWizard": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/addConversationTopic cc_Begin/showFrame {{ModId}}_EarthSpirit 1/skippable/pause 1000/speak {{ModId}}_EarthSpirit\"You should be able to understand me, right? Good.#$b#I'll keep this brief: the ones known as Joja drilled down here. For what reason, I don't know. Something about cheap lead.#$b#We drove them off but not before their machines stunk up the place. The others didn't react well to that and went mad.#$b#They looked set to stay like that forever, but I had a plan and you being here means it worked.#$b#Alongside letting us talk, that ring purfies the air. The problem should have been taken care of as you went down.#$b#It'll probably take awhile for the others to realize that though. Don't feel bad about wackin' em. They'll grow back.#$bYour job's done here. I'll be staying with the miner from now on to make sure nobody tries anything.#$b#Take this for your trouble. It should help you grow things when you're not supposed to.'\"/addItem {{ModId}}_EarthShardMachine/addCraftingRecipe {{ModId}}_EarthShardMachineRecipe/pause 1000/end"
+        "{{ModId}}_203/": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/addCraftingRecipe {{ModId}}_EarthRingRecipe/pause 1000/end",
+        "{{ModId}}_205/GameStateQuery PLAYER_HAS_RUN_TRIGGER_ACTION Current {{ModId}}_OnRingShownToWizard": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/addConversationTopic cc_Begin/showFrame {{ModId}}_EarthSpirit 1/pause 1000/speak {{ModId}}_EarthSpirit \"You should be able to understand me, right? Good.#$b#I'll keep this brief: the ones known as Joja drilled down here. For what reason, I don't know. Something about cheap lead.#$b#We drove them off but not before their machines stunk up the place. The others didn't react well to that and went mad.#$b#They looked set to stay like that forever, but I had a plan and you being here means it worked.#$b#Alongside letting us talk, that ring purfies the air. The problem should have been taken care of as you went down.#$b#It'll probably take awhile for the others to realize that though. Don't feel bad about wackin' em. They'll grow back.#$bYour job's done here. I'll be staying with the miner from now on to make sure nobody tries anything.#$b#Take this for your trouble. It should help you grow things when you're not supposed to.\"/addItem {{ModId}}_EarthShardMachine/addCraftingRecipe {{ModId}}_EarthShardMachineRecipe/pause 1000/end"
       }
     },
     {
@@ -306,7 +323,7 @@
           "Trigger": "LocationChanged",
           "Condition": "PLAYER_LOCATION_UNIQUE_NAME Current SpaceCore_Dungeon_Charlie.Underpressure_EarthSpiritDungeon_30",
           "Actions": [
-            "AddItem (O){{ModId}}_EarthShard"
+            "Null"
           ]
         }
       }
@@ -318,9 +335,9 @@
         "{{ModId}}_OnRingShownToWizard": {
           "Id": "{{ModId}}_OnRingShownToWizard",
           "Trigger": "LocationChanged",
-          "Condition": "PLAYER_LOCATION_NAME Current WizardHouse, PLAYER_HAS_ITEM Current {{ModId}}_EarthRing",
+          "Condition": "LOCATION_NAME Here WizardHouse, PLAYER_HAS_ITEM Current {{ModId}}_EarthRing",
           "Actions": [
-            "AddItem (O){{ModId}}_EarthShard" //just to check if it works
+            "Null"
           ]
         }
       }
@@ -344,7 +361,7 @@
         "{{ModId}}_UPMail": {
           "Id": "{{ModId}}_UPMail",
           "Trigger": "DayStarted",
-          "Condition": "DAYS_PLAYED 85, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
+          "Condition": "DAYS_PLAYED 84, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
           "Actions": [
             "AddMail Current {{ModId}}_RoryHelp now",
             "AddItem (O){{ModId}}_EarthShard"
@@ -353,7 +370,7 @@
         "{{ModId}}_UPQuest1": {
           "Id": "{{ModId}}_UPQuest1",
           "Trigger": "DayStarted",
-          "Condition": "DAYS_PLAYED 85, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
+          "Condition": "DAYS_PLAYED 84, MINE_LOWEST_LEVEL_REACHED 5, PLAYER_VISITED_LOCATION Current WizardHouse",
           "Actions": [
             "AddQuest {{ModId}}_201"
           ]

@@ -293,8 +293,8 @@
       "Action": "EditData",
       "Target": "Data/Events/DungeonFinal",
       "Entries": {
-        "{{ModId}}_203/": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/addCraftingRecipe {{ModId}}_EarthRingRecipe/pause 1000/end",
-        "{{ModId}}_205/GameStateQuery PLAYER_HAS_RUN_TRIGGER_ACTION Current {{ModId}}_OnRingShownToWizard": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/addItem {{ModId}}_EarthShardMachine/addCraftingRecipe {{ModId}}_EarthShardMachineRecipe/pause 1000/end"
+        "{{ModId}}_203/": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/skippable/pause 1000/move farmer 6 0 1/move {{ModId}}_EarthSpirit 0 0 3/addItem {{ModId}}_EarthRing/addCraftingRecipe {{ModId}}_EarthRingRecipe/pause 1000/end",
+        "{{ModId}}_205/GameStateQuery PLAYER_HAS_RUN_TRIGGER_ACTION Current {{ModId}}_OnRingShownToWizard": "none/18 13/farmer 12 13 1 {{ModId}}_EarthSpirit 20 13 1/addConversationTopic cc_Begin/showFrame {{ModId}}_EarthSpirit 1/skippable/pause 1000/speak {{ModId}}_EarthSpirit\"You should be able to understand me, right? Good.#$b#I'll keep this brief: the ones known as Joja drilled down here. For what reason, I don't know. Something about cheap lead.#$b#We drove them off but not before their machines stunk up the place. The others didn't react well to that and went mad.#$b#They looked set to stay like that forever, but I had a plan and you being here means it worked.#$b#Alongside letting us talk, that ring purfies the air. The problem should have been taken care of as you went down.#$b#It'll probably take awhile for the others to realize that though. Don't feel bad about wackin' em. They'll grow back.#$bYour job's done here. I'll be staying with the miner from now on to make sure nobody tries anything.#$b#Take this for your trouble. It should help you grow things when you're not supposed to.'\"/addItem {{ModId}}_EarthShardMachine/addCraftingRecipe {{ModId}}_EarthShardMachineRecipe/pause 1000/end"
       }
     },
     {
